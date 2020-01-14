@@ -1,107 +1,115 @@
-
 <!doctype html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<title>The Film Music of Alan Silvestri</title>
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="bass.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-<script type="text/javascript">
-        $(document).ready(function(){
-            $('.slider').bxSlider({
-                auto: true,
-                pause: 5000,
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>The Film Music of Alan Silvestri</title>
+    <link rel="shortcut icon" href="imges/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bass.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <link href="slick/slick.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.slider').slick({
+                infinite: true,
+                dots: true,
+                slidesToShow: 1,
+                centerMode: true, //要素を中央寄せ
+                centerPadding: '20%', //両サイドの見えている部分のサイズ
+                autoplay: true, //自動再生
             });
         });
-</script>
+    </script>
 </head>
 
 <body>
-<!--ここからスタート-->
-<!--上のロゴ-->
-<h1 id="top"><a href="index.html"><img src="img/Alan Silvestri.png" alt="トップのロゴ"></a></h1>
-<!--上のナビゲーション-->
-<nav>
-    <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="artist.html">PROFILE</a></li>
-        <li><a href="music.html">DISCOGRAPHY</a></li>
-    </ul>
-</nav>
-<!--画像のスライドショーとアランシルヴェストリ-->
-<table id="topslider" summary="トップのアルバムアートとアランシルヴェストリの画像" width="1080" height="400">
-    <tr>
-        <td>
-            <div class="slider">
-                <img src="img/film_01.jpg" width="500" height="300" alt="エンドゲームのアルバムアート">
-                <img src="img/film_02.jpg" width="500" height="300" alt="レディプレイヤーワンのアルバムアート">
-                <img src="img/film_03.jpg" width="500" height="300" alt="バックトゥーザフューチャーのアルバムアート">
-                <img src="img/film_04.jpg" width="500" height="300" alt="インフィニティーウォーのアルバムアート">
+    <!--ここからスタート-->
+    <div id="wrapper">
+        <div id="header">
+            <!--上のロゴ-->
+            <div id="logo">
+                <h1>
+                    <a href="index.html"><img src="imges/Alan Silvestri.png" alt="トップのロゴ"></a>
+                </h1>
             </div>
-        </td>
-        <td>
-            <div class="topartist"><a href="artist.html"><img src="img/top_artist.jpg" width="500" height="350" alt="指揮しているアランシルヴェストリ"></a></div>
-        </td>
-    </tr>
-</table>
-<div class="top_prof_album">
-    <!--トップページのプロフィール紹介-->
-    <div class=topprofile>
-        <h2 style="text-decoration: underline">Profile</h2>
-        <table summary="トップのプロフィール">
-            <tr>
-                <th rowspan="4"><img src="img/artist_01.jpg" width="220" height="282" alt="アランシルヴェストリの画像"></th>
-                <td>英語表記： Alan Silvestri</td>
-            </tr>
-            <tr>
+            <!--logo-->
+            <!--上のナビゲーション-->
+            <div id="headnavi">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="artist.html">PROFILE</a></li>
+                    <li><a href="music.html">DISCOGRAPHY</a></li>
+                </ul>
+            </div>
+            <!--headnavi-->
+        </div>
+        <!--header-->
+        <!--アランシルヴェストリの画像-->
+        <div id="top_img">
+            <div class="top_img">
+                <img src="imges/top_artist.jpg" alt="指揮しているアランシルヴェストリ">
+                <ul>
+                    <li><a href="index.html" class="top_img_nav">HOME</a></li>
+                    <li><a href="artist.html" class="top_img_nav">PROFILE</a></li>
+                    <li><a href="music.html" class="top_img_nav">DISCOGRAPHY</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--top_img-->
+        <div id="top_content">
+            <!--トップページのアルバム紹介-->
+            <div id="top_album">
+                <h2>DISCOGRAPHY</h2>
+                <ul class="slider">
+                    <li><img src="imges/film_01.jpg" class="slider_img" alt="エンドゲームのアルバムアート"></li>
+                    <li><img src="imges/film_02.jpg" class="slider_img" alt="レディプレイヤーワンのアルバムアート"></li>
+                    <li><img src="imges/film_03.jpg" class="slider_img" alt="バックトゥーザフューチャーのアルバムアート"></li>
+                    <li><img src="imges/film_04.jpg" class="slider_img" alt="インフィニティーウォーのアルバムアート"></li>
+                </ul>
+                <p class="viewmore"><a href="music.html">View More →</a></p>
+            </div>
+            <!--top_album-->
 
-                <td>本名： アラン・アンソニー・シルベストリ</td>
-            </tr>
-            <tr>
-
-                <td>誕生日： 1950年3月26日</td>
-            </tr>
-            <tr>
-
-                <td>出身： アメリカ／ニューヨーク</td>
-            </tr>
-        </table>
-        <p style="position: absolute; bottom:0"><a href="artist.html">詳しいプロフィールを見る</a></p>
+            <!--トップページのプロフィール紹介-->
+            <div id="top_profile">
+                <h2>PROFILE</h2>
+                <div class="prof_content">
+                    <p class="prof_content_img"><img src="imges/artist_01.jpg" alt="アランシルヴェストリの画像"></p>
+                    <div class="prof_content_text">
+                        <p>アラン・シルヴェストリ</p>
+                        <ul>
+                            <li>生年月日：1950年3月26日</li>
+                            <li>出身：アメリカ・ニューヨーク</li>
+                            <li>職業：指揮者、作曲家</li>
+                            <li>担当楽器：ギター、ピアノ、シンクラヴィア、シンセサイザー、ドラム</li>
+                            <li>活動期間：1972年 - 現在</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="viewmore"><a href="artist.html">View More →</a></p>
+            </div>
+            <!--top_profile-->
+        </div>
+        <!--top_content-->
+        <div id="footer">
+            <!--下のナビゲーション-->
+            <div id="undernavi">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="artist.html">PROFILE</a></li>
+                    <li><a href="music.html">DISCOGRAPHY</a></li>
+                </ul>
+            </div>
+            <!--undernav-->
+            <p>© 1984-2019, The Film Music of Alan Silvestri. All Rights Reserved. All images and content are the property of ASMI or respective copyright holders.</p>
+        </div>
+        <!--footer-->
     </div>
-    <!--トップページのアルバム紹介-->
-    <div class="favoritealbum">
-        <h2 style="text-decoration: underline">My Favorite Album Top3</h2>
-        <table summary="好きなアルバム紹介">
-            <tr>
-                <td><img src="img/top_album01.jpg" width="138px" height="205px" alt="バックトゥーザフューチャーのアルバム画像"></td>
-                <td><img src="img/top_album02.jpg" width="138px" height="205px" alt="レディプレイヤーワンのアルバム画像"></td>
-                <td><img src="img/top_album03.jpg" width="138px" height="205px" alt="エンドゲームのアルバム画像"></td>
-            </tr>
-            <tr>
-                <th>Back to the Future (1985)</th>
-                <th>Ready Player One (2018)</th>
-                <th>Marvel's Avengers: Endgame (2019)</th>
-            </tr>
-        </table>
-        <p style="position: absolute; bottom:0"><a href="music.html">他のアルバムを見る</a></p>
-    </div>
-    <!--floatを消すための空要素-->
-    <div style="clear: both">
-    </div>
-</div>
-<!--下のナビゲーション-->
-<nav id="undernavi">
-    <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="artist.html">PROFILE</a></li>
-        <li><a href="music.html">DISCOGRAPHY</a></li>
-    </ul>
-</nav>
-
+    <!--wrapper-->
 </body>
+
 </html>

@@ -1,0 +1,87 @@
+@charset "utf-8";
+/*====デフォルトスタイルの初期化====*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style-type: none;
+	list-style-position: outside;
+}
+div{
+	box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+h1,h2{
+	font-size:1em;
+}
+/*=========共通のスタイル=========*/
+body {
+  font-family: 游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN","Hiragino Mincho Pro",HGS明朝E,メイリオ,Meiryo,serif;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000
+}
+a{
+  color: #000000;
+  transition: all 0.3s ease;
+}
+a:hover{
+  color: #969696;
+}
+#wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+#header{
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/*ロゴマーク*/
+#logo img{
+  max-width: 250px;
+  filter: opacity(100%);
+  transition: all 0.3s ease;
+}
+#logo img:hover{
+  filter: opacity(50%);
+}
+/*上のナビゲーション*/
+#headnavi{
+  width: 400px;
+}
+#headnavi ul{
+  display: flex;
+  justify-content:space-between;
+}
+#headnavi a{
+  display: block;
+}
+/*下のナビゲーション*/
+#undernavi{
+  border-bottom: 1px solid #000000;
+  padding: 10px;
+}
+#undernavi ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+#undernavi li{
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+#footer p{
+  font-size: 10px;
+  text-align: center;
+  padding: 10px;
+}
+

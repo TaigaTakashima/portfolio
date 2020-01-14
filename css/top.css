@@ -1,0 +1,130 @@
+@charset "utf-8";
+/*====トップページ====*/
+/*トップページの画像*/
+#top_img {
+  width: 100%;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.top_img {
+  position: relative;
+  text-align: center;
+}
+.top_img img {
+  width: 80%;
+  height: auto;
+}
+.top_img ul {
+  position: absolute;
+  text-align: left;
+  top: 20px;
+  left: 13%;
+}
+.top_img li {
+  margin-bottom: 30px;
+}
+.top_img_nav {
+  display: inline-block;
+  position: relative;
+}
+.top_img a{
+  color: #ffffffde;
+  text-decoration: none;
+  font-size: 40px;
+  letter-spacing: 6px;
+}
+
+.top_img_nav::after {
+  background-color: #ffffff;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transition: 0.5s all;
+  width: 0;
+}
+
+.top_img_nav:hover::after {
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .top_img ul {
+    display: none;
+  }
+}
+/*トップページプロフィールとアルバム*/
+#top_content {
+  margin-bottom: 100px;
+}
+#top_content h2{
+  font-size: 22px;
+  text-align: center;
+  line-height: 5em;
+  letter-spacing: 3px;
+}
+.viewmore{
+  text-decoration: underline;
+  font-size: 18px;
+}
+/*トップページ好きなアルバム紹介*/
+#top_album {
+  width: 80%;
+  margin:0 auto;
+  margin-bottom: 50px;
+}
+#top_album img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+#top_album img:hover{
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+}
+.slider {
+  width: 100%;
+  margin: 0 auto;
+}
+.slider img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.slider .slick-next {
+  right: 20px;
+  z-index: 99;
+}
+.slider .slick-prev {
+  left: 15px;
+  z-index: 100;
+}
+.slider_img {
+  width: 100%;
+}
+/*トップページプロフィール紹介*/
+#top_profile {
+  width: 80%;
+  margin: 0 auto;
+}
+.prof_content{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.prof_content_img img{
+  width: 220px;
+  height: 282px;
+}
+.prof_content_text{
+  line-height: 3em;
+}
