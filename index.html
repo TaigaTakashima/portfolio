@@ -3,23 +3,196 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WA jQueryプラグイン実装</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/design.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/css/drawer.min.css">
+    <link rel="stylesheet" href="css/modaal.css">
+    <link rel=" stylesheet" type="text/css" href="css/tinytools.tourtip.min.css">
+    <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script src="js/modaal.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+    <script src="js/drawer.js"></script>
+    <script src="js/nicetooltip.js"></script>
+    <script src="js/tinytools.tourtip.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            //ナビのアコーディオン（動作確認様）
+            $("#navi dt").click(function() {
+                $(this).next().slideToggle(500);
+            });
+            //slick
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true,
+                autoplay: true
+            });
+            //drawer
+            $('.drawer').drawer();
+            //niceTooltip
+            $('#demo1').niceTooltip({
+                HTML: "吹き出しがでます"
+            });
+            $('#demo2').niceTooltip({
+                HTML: "位置を右下に指定した吹き出しがでます",
+                position: {
+                    horizontal: "right",
+                    vertical: "bottom"
+                }
+            });
+            //tourTip
+            $("#tour1").tourTip({
+                title: "Drawer",
+                description: "ドロワーメニューのプラグインです。クリックでナビゲーションが出てきます。",
+                previous: true,
+                position: 'right'
+            });
+            $("#mainContents").tourTip({
+                title: "slick",
+                description: "スライダーのプラグインです。このスライダーと上のメインビジュアルのスライダーが連動しています。",
+                previous: true,
+                position: 'bottom'
+            });
+            $("#demo1").tourTip({
+                title: "niceTooltip",
+                description: "マウスオーバーで吹き出しを出すプラグインです。一つ目のものは右上にでて二つ目のものは右下にでます。",
+                previous: true,
+                position: 'right'
+            });
+            $("#modal").tourTip({
+                title: "Modaal",
+                description: "モーダルウィンドウを表示するプラグインです",
+                previous: true,
+                position: 'right'
+            });
+            $("#StartTour").click(function() {
+                $.tourTip.start();
+            });
+            //modaal
+            $(".modal").modaal({});
+        });
+    </script>
 </head>
 
-<body>
-    <!---->
-    <h1>てすと</h1>
-    <ul>
-        <li>新規会員登録</li>
-        <li>ログイン</li>
-    </ul>
-    <ul>
-        <li>ホーム</li>
-        <li>上映中映画</li>
-        <li>公開スケジュール</li>
-        <li>映画館検索</li>
-        <li>ランキング</li>
-    </ul>
+<body class="drawer drawer--left">
+    <div id="wrapper">
+
+        <div role="banner">
+            <button type="button" id="tour1" class="drawer-toggle drawer-hamburger">
+                <span class="sr-only">toggle navigation</span>
+                <span class="drawer-hamburger-icon"></span>
+            </button>
+            <div id="contents_left" class="drawer-nav" role="navigation">
+                <div id="header" class="drawer-menu-item">
+                    <h1><img src="images/logo.png" width="158" height="85" alt="ロゴ"></h1>
+                </div>
+                <div id="navi" class="drawer-menu-item">
+                    <dl>
+                        <dt><a href="#"><img src="images/nav1.png" width="190" height="45" alt="ボタン１"></a></dt>
+                        <dd>項目①</dd>
+                        <dt><a href="#"><img src="images/nav2.png" width="190" height="45" alt="ボタン２"></a></dt>
+                        <dd>項目②</dd>
+                        <dt><a href="#"><img src="images/nav3.png" width="190" height="45" alt="ボタン３"></a></dt>
+                        <dd>項目③</dd>
+                        <dt><a href="#"><img src="images/nav4.png" width="190" height="45" alt="ボタン４"></a></dt>
+                        <dd>項目④</dd>
+                        <dt><a href="#"><img src="images/nav5.png" width="190" height="45" alt="ボタン５"></a></dt>
+                        <dd>項目⑤</dd>
+                        <dt><a href="#"><img src="images/nav6.png" width="190" height="45" alt="ボタン６"></a></dt>
+                        <dd>項目⑥</dd>
+                    </dl>
+                </div>
+            </div>
+            <!--contents_left-->
+        </div>
+
+        <div id="contents_right">
+            <button type="button" id="StartTour" class="btn-tour">説明をスタート</button>
+            <div id="mainVisual" class="slider-for">
+                <div>
+                    <img src="images/MainVisual_consept.png" width="710" height="280">
+                </div>
+                <div>
+                    <img src="images/MainVisual_consulting.png" width="710" height="280">
+                </div>
+                <div>
+                    <img src="images/MainVisual_production.png" width="710" height="280">
+                </div>
+                <div>
+                    <img src="images/MainVisual_traning.png" width="710" height="280">
+                </div>
+            </div>
+
+            <div id="mainContents" class="slider-nav">
+
+                <div id="con_consept">
+                    <p class="con_mg" id="tour2"><img src="images/consept.png" width="170" height="220" alt="consept"></p>
+                </div>
+
+                <div id="con_consulting">
+                    <p class="con_mg"><img src="images/consulting.png" width="170" height="220" alt="consulting"></p>
+                </div>
+
+                <div id="con_production">
+                    <p class="con_mg"><img src="images/production.png" width="170" height="220" alt="production"></p>
+                </div>
+
+                <div id="con_traning">
+                    <p class="con_mg"><img src="images/traning.png" width="170" height="220" alt="traning"></p>
+                </div>
+
+            </div>
+            <div id="works">
+                <h2><img src="images/works_h2.png" width="63" height="22" alt="ワークス"></h2>
+                <ul>
+                    <li class="works_links_left">
+                        <a href="#"><img src="images/bana_wd21.png" width="140" height="60" alt="WD21"></a>
+                    </li>
+                    <li>
+                        <a href="#modal" class="modal">
+                            <p id="modal"><img src="images/bana_cg22.png" width="140" height="60" alt="CG22"></p>
+                        </a>
+                    </li>
+                    <li class="works_links_left">
+                        <a href="#"><img src="images/bana_dg21.png" width="140" height="60" alt="DG21"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/bana_dt21.png" width="140" height="60" alt="DT21"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="information">
+                <h2><img src="images/informatin_h2.png" width="97" height="22" alt="インフォメーション"></h2>
+                <ul>
+                    <li id="demo1"><a href="#">20xx.11.xx<span>WA課題No03が提示されました。</span></a></li>
+                    <li id="demo2"><a href="#">20xx.11.xx<span>WA課題No02が提示されました。</span></a></li>
+                    <li><a href="#">20xx.10.xx<span>WA課題No01を提出しました。</span></a></li>
+                    <li><a href="#">20xx.10.xx<span>WA課題No01が提示されました。</span></a></li>
+                    <li><a href="#">20xx.10.xx<span>js・jQueryの操作方法を学習しました。</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--contents_right-->
+    </div>
+    <!--wrapper-->
 </body>
 
 </html>
