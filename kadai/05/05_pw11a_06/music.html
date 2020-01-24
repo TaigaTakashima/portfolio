@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>DISCOGRAPHY | The Film Music of Alan Silvestri</title>
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="bass.css">
+<!--ここからモーダルのスクリプト-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+    // 「.modal-open」をクリック
+    $('.modal-open').click(function(){
+        // スクロール禁止
+        $('html, body').css('overflow', 'hidden');
+        // オーバーレイ用の要素を追加
+        $('body').append('<div class="modal-overlay"></div>');
+        // オーバーレイをフェードイン
+        $('.modal-overlay').fadeIn('slow');
+
+        // モーダルコンテンツのIDを取得
+        var modal = '#' + $(this).attr('data-target');
+        // モーダルコンテンツの表示位置を設定
+        modalResize();
+         // モーダルコンテンツフェードイン
+        $(modal).fadeIn('slow');
+        // 「.modal-overlay」あるいは「.modal-close」をクリック
+        $('.modal-overlay, .modal-close').off().click(function(){
+            // overflow: hidden を消す
+            $('html, body').removeAttr('style');
+            // モーダルコンテンツとオーバーレイをフェードアウト
+            $(modal).fadeOut('slow');
+            $('.modal-overlay').fadeOut('slow',function(){
+                // オーバーレイを削除
+                $('.modal-overlay').remove();
+            });
+        });
+
+        // リサイズしたら表示位置を再取得
+        $(window).on('resize', function(){
+            modalResize();
+        });
+
+        // モーダルコンテンツの表示位置を設定する関数
+        function modalResize(){
+            // ウィンドウの横幅、高さを取得
+            var w = $(window).width();
+            var h = $(window).height();
+
+            // モーダルコンテンツの表示位置を取得
+            var x = (w - $(modal).outerWidth(true)) / 2;
+            var y = (h - $(modal).outerHeight(true)) / 2;
+
+            // モーダルコンテンツの表示位置を設定
+            $(modal).css({'left': x + 'px','top': y + 'px'});
+        }
+
+    });
+});
+</script>
+<!--ここまでモーダルのスクリプト-->
+</head>
+
+<body>
+<!--ここからスタート-->
+<h1 id="top"><a href="index.html"><img src="img/Alan Silvestri.png" alt="トップのロゴ"></a></h1>
+<!--上のナビゲーション-->
+<nav id="topnavi">
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="artist.html">PROFILE</a></li>
+        <li><a href="music.html">DISCOGRAPHY</a></li>
+    </ul>
+</nav>
+<h1 style="padding: 10px; text-align: center">DISCOGRAPHY</h1>
+<!--アルバムの紹介-->
+  <table id="albumtable" summary="アルバム紹介">
+    <!--１行目アルバム画像-->
+      <tr>
+          <th><img class="albumart" src="img/disc_01.jpg" width="300" height="300" alt="エンドゲームアルバムアート"></th>
+          <th><img class="albumart" src="img/disc_02.jpg" width="300" height="300" alt="インフィニティーウォーアルバムアート"></th>
+          <th><img class="albumart" src="img/disc_03.jpg" width="300" height="300" alt="レディプレイヤーワンアルバムアート"></th>
+      </tr>
+    <!--１行目アルバムタイトル&詳細のモーダルウィンドウ-->
+        <tr>
+          <th>
+            <a data-target="con1" class="modal-open"><button class="modalbutton">Marvel's Avengers: Endgame (2019)</button></a>
+          </th>
+          <th>
+            <a data-target="con2" class="modal-open"><button class="modalbutton">Marvel's Avengers: Infinity War (2018)</button></a>
+          </th>
+          <th>
+            <a data-target="con3" class="modal-open"><button class="modalbutton">Ready Player One (2018)</button></a>
+          </th>
+        </tr>
+    <!--２行目アルバム画像-->
+      <tr>
+          <th><img class="albumart" src="img/disc_04.jpg" width="300" height="300" alt="アベンジャーズアルバムアート"></th>
+          <th><img class="albumart" src="img/disc_05.jpg" width="300" height="300" alt="キャプテンアメリカ"></th>
+          <th><img class="albumart" src="img/disc_06.jpg" width="300" height="300" alt="スチュアートリトルアルバムアート"></th>
+      </tr>
+    <!--２行目アルバムタイトル&詳細のモーダルウィンドウ-->
+      <tr>
+          <th>
+            <a data-target="con4" class="modal-open"><button class="modalbutton">The Avengers (2012)</button></a>
+          </th>
+          <th>
+            <a data-target="con5" class="modal-open"><button class="modalbutton">Captain America (2011)</button></a>
+          </th>
+          <th>
+            <a data-target="con6" class="modal-open"><button class="modalbutton">Stuart Little (1999)</button></a>
+          </th>
+      </tr>
+    <!--３行目アルバム画像-->
+      <tr>
+          <th><img class="albumart" src="img/disc_07.jpg" width="300" height="300" alt="フォレスト・ガンプアルバムアート"></th>
+          <th><img class="albumart" src="img/disc_08.jpg" width="300" height="300" alt="プレデターアルバムアート"></th>
+          <th><img class="albumart" src="img/disc_09.jpg" width="300" height="300" alt="バックトゥーザフューチャーアルバムアート"></th>
+      </tr>
+    <!--３行目アルバムタイトル&詳細のモーダルウィンドウ-->
+      <tr>
+          <th>
+            <a data-target="con7" class="modal-open"><button class="modalbutton">Forrest Gump (1994)</button></a>
+          </th>
+          <th>
+            <a data-target="con8" class="modal-open"><button class="modalbutton">Predator (1987)</button></a>
+          </th>
+          <th>
+            <a data-target="con9" class="modal-open"><button class="modalbutton">Back to the Future (1985) </button></a>
+          </th>
+      </tr>
+  </table>
+<!--アルバム紹介のモーダルの中身-->
+<div id="con1" class="modal-content">
+  <table summary="アルバムの詳細の紹介:エンドゲーム">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Marvel's Avengers: Endgame (2019)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_01.jpg" width="300" height="300" alt="エンドゲームアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>Totally Fine</li>
+          <li>Arrival</li>
+          <li>No Trust</li>
+          <li>Where Are They?</li>
+          <li>Becoming Whole Again</li>
+          <li>I Figured It Out</li>
+          <li>Perfectly Not Confusing</li>
+          <li>You Shouldn't Be Here</li>
+          <li>The How Works</li>
+          <li>Snap Out of It</li>
+          <li>So Many Stairs</li>
+          <li>One Shot</li>
+          <li>Watch Each Other's Six</li>
+          <li>I Can't Risk This</li>
+          <li>He Gave It Away</li>
+          <li>The Tool of a Thief</li>
+          <li>The Measure of a Hero</li>
+          <li>Destiny Fulfilled</li>
+          <li>In Plain Sight</li>
+          <li>Whatever It Takes</li>
+          <li>Not Good</li>
+          <li>Gotta Get Out</li>
+          <li>I Was Made for This</li>
+          <li>Tres Amigos</li>
+          <li>Tunnel Scape</li>
+          <li>Worth It</li>
+          <li>Portals</li>
+          <li>Get This Thing Started</li>
+          <li>The One</li>
+          <li>You Did Good</li>
+          <li>The Real Hero</li>
+          <li>Five Seconds</li>
+          <li>Go Ahead</li>
+          <li>Main on End</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+          2019年、アベンジャーズが終わる―。<br>
+          全世界注目の「アベンジャーズ」完結編のオリジナル・サウンドトラック!
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con2" class="modal-content">
+  <table summary="アルバムの詳細の紹介:インフィニティーウォー">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Marvel's Avengers: Infinity War(2018)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_02.jpg" width="300" height="300" alt="インフィニティーウォーアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>The Avengers</li>
+          <li>Travel Delays</li>
+          <li>Undying Fidelity</li>
+          <li>He Won't Come Out</li>
+          <li>We Both Made Promises</li>
+          <li>Help Arrives</li>
+          <li>Hand Means Stop</li>
+          <li>You Go Right</li>
+          <li>Family Affairs</li>
+          <li>What More Could I Lose?</li>
+          <li>A Small Price</li>
+          <li>Even For You</li>
+          <li>More Power</li>
+          <li>Charge!</li>
+          <li>Forge</li>
+          <li>Catch</li>
+          <li>Haircut And Beard</li>
+          <li>A Lot To Figure Out</li>
+          <li>The End Game</li>
+          <li>I Feel You</li>
+          <li>What Did It Cost?</li>
+          <li>Porch</li>
+          <li>Infinity War</li>
+          </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+        マーベル史上最多ヒーロー総集結！映画史を変える最強チームのサウンドトラック！<br>
+        アイアンマン、キャプテン・アメリカ、スパイダーマンら"アベンジャーズ”と敵・サノスの戦いを盛り上げる楽曲を収録している。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <a class="modal-close">CLOSE</a>
+      </th>
+    </tr>
+  </table>
+</div>
+<div id="con3" class="modal-content">
+  <table summary="アルバムの詳細の紹介:レディプレイヤーワン">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Ready Player One (2018)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_03.jpg" width="300" height="300" alt="レディプレイヤーワンアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>The Oasis</li>
+          <li>"Hello, I'm James Halliday"</li>
+          <li>"Why Can't We Go Backwards?”</li>
+          <li>An Orb Meeting</li>
+          <li>Real World Consequences</li>
+          <li>Sorrento Makes An Offer</li>
+          <li>Welcome To The Rebellion</li>
+          <li>High 5 Assembles</li>
+          <li>Orb Of Osuvox</li>
+          <li>Sorrento Punked</li>
+          <li>Wade's Broadcast</li>
+          <li>Arty On The "Inside"</li>
+          <li>Looking For A Truck</li>
+          <li>She Never Left</li>
+          <li>Last Chance</li>
+          <li>"Get Me Out Of This"</li>
+          <li>"Hold On To Something"</li>
+          <li>"This Is Wrong"</li>
+          <li>"What Are You?"</li>
+          <li>"There's Something I Need To Do"</li>
+          <li>Main Title</li>
+          <li>End Credits</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+          スティーブン・スピルバーグ監督がアーネスト・クラインの小説「ゲームウォーズ」を映画化したSFアクション『レディ・プレイヤー1』サウンドトラック。
+          原題は『READY PLAYER ONE』。音楽はアラン・シルヴェストリが担当。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con4" class="modal-content">
+  <table summary="アルバムの詳細の紹介:アベンジャーズ">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        The Avengers (2012)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_04.jpg" width="300" height="300" alt="アベンジャーズアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>Arrival</li>
+          <li>Doors Open From Both Sides</li>
+          <li>Tunnel Chase</li>
+          <li>Interrogation</li>
+          <li>Stark Goes Green</li>
+          <li>Helicarrier</li>
+          <li>Subjugation</li>
+          <li>Don't Take My Stuff</li>
+          <li>Red Ledger</li>
+          <li>Assault</li>
+          <li>They Called It</li>
+          <li>Performance Issues</li>
+          <li>Seeing, Not Believing</li>
+          <li>Assemble</li>
+          <li>I Got a Ride</li>
+          <li>A Little Help</li>
+          <li>One Way Trip</li>
+          <li>A Promise</li>
+          <li>The Avengers</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+        アイアンマン、ソー、ハルク、キャプテン・アメリカなど、世界的に有名なヒット作の主人公が一堂に終結したアクション大作『アベンジャーズ』オリジナル･サウンドトラック。
+        こちらのサントラには、15年ぶりに新曲を発表するSoundt Gardenほか、Shinedown、Cherri Bomb、Evanescence, Kasabianなど収録。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con5" class="modal-content">
+  <table summary="アルバムの詳細の紹介:キャプテン・アメリカ">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Captain America: The First Avenger (2011)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_05.jpg" width="300" height="300" alt="キャプテンアメリカ">
+      </th>
+      <td>
+        <ol>
+            <li>Captain America Main Titles</li>
+            <li>Frozen Wasteland</li>
+            <li>chmidt's Treasure</li>
+            <li>arewell To Bucky</li>
+            <li>ydra Lab</li>
+            <li>raining The Supersoldier</li>
+            <li>chmidt's Story</li>
+            <li>itarays</li>
+            <li>aptain America 'we Did It'</li>
+            <li>ruger Chase</li>
+            <li>ostage On The Pier</li>
+            <li>eneral's Resign</li>
+            <li>nauthorized Night Flight</li>
+            <li>roop Liberation</li>
+            <li>actory Inferno</li>
+            <li>riumphant Return</li>
+            <li>owling Commando's Montage</li>
+            <li>ydra Train</li>
+            <li>ain Fire Upon Them</li>
+            <li>otorcycle Mayhem</li>
+            <li>nvasion</li>
+            <li>light On The Flight Deck</li>
+            <li>his is My Choice</li>
+            <li>assage Of Time</li>
+            <li>aptain America</li>
+            <li>tar Spangled Man</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+        最強ヒーローたちの原点にして頂点！
+        マーベル・コミックの初代英雄が遂に登場！
+        『アイアンマン』『スパイダーマン』『X-MEN』『マイティ・ソー』らマーベル・ヒーロー作品はもちろん、
+        「仮面ライダー」などのヒーローの原点とも言える、興奮のドラマがここに！
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con6" class="modal-content">
+  <table summary="アルバムの詳細の紹介:スチュアートリトル">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Stuart Little (1999)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_06.jpg" width="300" height="300" alt="スチュアートリトルアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>I Need To Know</li>
+          <li>The Two Of Us</li>
+          <li>You’re Where I Belong</li>
+          <li>If You Can’t Rock Me</li>
+          <li>1+1=2</li>
+          <li>He Rules</li>
+          <li>Home</li>
+          <li>Walking Tall</li>
+          <li>Lucky Day</li>
+          <li>Mouse In The House</li>
+          <li>As Long As I Can Dream</li>
+          <li>The Boat Race</li>
+          <li>I’m Gonna Miss You</li>
+          <li>You’re Where I Belong</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+          映画『スチュアート・リトル』のサントラ盤。<br>
+          S CLUB 7「The Two Of Us」、702「He Rules」他、全14曲を収録。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con7" class="modal-content">
+  <table summary="アルバムの詳細の紹介:フォレスト・ガンプ">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Forrest Gump (1994)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_07.jpg" width="300" height="300" alt="フォレスト・ガンプアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>Hound Dog</li>
+          <li>Rebel Rouser</li>
+          <li>(I Don't Know Why) But I Do</li>
+          <li>Walk Right In</li>
+          <li>Land of 1000 Dances</li>
+          <li>Blowin' in the Wind</li>
+          <li>Fortunate Son</li>
+          <li>I Can't Help Myself</li>
+          <li>Respect</li>
+          <li>Rainy Day Women #12 & 35</li>
+          <li>Sloop John B</li>
+          <li>California Dreamin'</li>
+          <li>For What It's Worth</li>
+          <li>What the World Needs Now Is Love</li>
+          <li>Break on Through (To the Other Side)</li>
+          <li>Mrs. Robinson</li>
+          <li>Volunteers</li>
+          <li>Get Together</li>
+          <li>San Francisco</li>
+          <li>Turn! Turn! Turn!</li>
+          <li>Medley: Aquarius/Let the Sunshine In</li>
+          <li>Everybody's Talkin'</li>
+          <li>Joy to the World</li>
+          <li>Stoned Love</li>
+          <li>Raindrops Keep Fallin' on My Head</li>
+          <li>Mr. President</li>
+          <li>Sweet Home Alabama</li>
+          <li>Running On Empty</li>
+          <li>It Keeps You Runnin'</li>
+          <li>I've Got to Use My Imagination</li>
+          <li>Go Your Own Way</li>
+          <li>On the Road Again</li>
+          <li>Against the Wind</li>
+          <li>Forrest Gump Suite</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+        トム・ハンクス主演のヒット映画『フォレスト・ガンプ』のサントラ盤。
+        エルヴィスからボブ・シーガーまで、1950～70年代の多彩なヒット曲を2枚組に凝縮され、ポピュラー・ファンも満足の豪華オムニバスだ。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con8" class="modal-content">
+  <table summary="アルバムの詳細の紹介:プレデター">
+    <tr>
+      <th colspan="2" style="font-size: 20px">
+        Predator (1987)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <img src="img/disc_08.jpg" width="300" height="300" alt="プレデターアルバムアート">
+      </th>
+      <td>
+        <ol>
+          <li>Fox Logo</li>
+          <li>Main Title</li>
+          <li>Something Else</li>
+          <li>The Truck</li>
+          <li>Jungle Trek</li>
+          <li>Girl's Escape</li>
+          <li>Blaine's Death</li>
+          <li>What Happened?</li>
+          <li>He's My Friend</li>
+          <li>We're Gonna Die</li>
+          <li>Building the Trap</li>
+          <li>The Waiting</li>
+          <li>Can You See Him?</li>
+          <li>Dillon's Death</li>
+          <li>Billy and Predator</li>
+          <li>Dutch Builds Trap</li>
+          <li>Predator's Injured</li>
+          <li>Hand to Hand Combat</li>
+          <li>Predator's Death</li>
+          <li>The Aftermath</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-size: 15px">
+          ジョン・マクティアナン監督、アーノルド・シュワルツェネッガー主演の人気SFアクション『プレデター』のサントラ。
+          アラン・シルヴェストリが手掛けた作品の中でも根強い人気がある作品。
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><a class="modal-close">CLOSE</a></th>
+    </tr>
+  </table>
+</div>
+<div id="con9" class="modal-content">
+  <table summary="アルバムの詳細の紹介:バックトゥーザフューチャー">
+      <tr>
+        <th colspan="2" style="font-size: 20px">
+          Back to the Future (1985)
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <img src="img/disc_09.jpg" width="300" height="300" alt="バックトゥーザフューチャーアルバムアート">
+        </th>
+        <td>
+          <ol>
+            <li>The Power Of Love</li>
+            <li>Time Bomb Town</li>
+            <li>Back To The Future</li>
+            <li>Heaven Is One Step Away</li>
+            <li>Back In Time</li>
+            <li>Back To The Future Overture</li>
+            <li>The Wallflower (Dance With Me Henry)</li>
+            <li>Night Train</li>
+            <li>Earth Angel (Will You Be Mine)</li>
+            <li>Johnny B. Goode</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 15px">
+            マイケル・J・フォックス主演の大ヒット映画『バック・トゥ・ザ・フューチャー』のオリジナル・サウンドトラック。
+            劇中でマーティ・マクフライが飛び入りでチャック・ベリー張りに演奏するシーンの「ジョニー・B・グッド」等を収録した楽しさ満載の一枚。
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2"><a class="modal-close">CLOSE</a></th>
+      </tr>
+    </table>
+</div>
+<!--下のナビゲーション-->
+<nav id="undernavi">
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="artist.html">PROFILE</a></li>
+        <li><a href="music.html">DISCOGRAPHY</a></li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://myscreate.com/pure-modal/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#1e1e1e">
+    <title>コピペで実装！モーダルウィンドウ［HTML / CSS / jQuery］  –  ma-ya's CREATE / WEB DESIGN</title>
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/reset.css">
+    <link href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/css" rel="stylesheet">
+    <link href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/font-awesome-animation.css" media="all">
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/animate.css">
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/juicyslider.css">
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/luminous-basic.css">
+    <link rel="stylesheet" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/style.css">
+    <link rel="shortcut icon" href="https://myscreate.com/wp-content/themes/mycreate/img/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myscreate.com/wp-content/themes/mycreate/img/192_touchIcon.png">
+        
+<!-- All in One SEO Pack 2.12.1 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description" content="こんにちわ、ma-ya&#39;s CREATE［まーやずくりえいと］です。 モーダルウィンドウ（ポップアップウィンドウ）の実装はついついプラグインに頼りがちですが、そういったものに頼らずに実装するケースもあります。">
+
+<link rel="canonical" href="https://myscreate.com/pure-modal/">
+<meta property="og:title" content="コピペで実装！モーダルウィンドウ［HTML / CSS / jQuery］">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://myscreate.com/pure-modal/">
+<meta property="og:image" content="https://myscreate.com/wp-content/uploads/2018/06/modal.jpg">
+<meta property="og:site_name" content="ma-ya&#39;s CREATE / WEB DESIGN">
+<meta property="fb:app_id" content="293452994524028">
+<meta property="og:description" content="こんにちわ、ma-ya&#39;s CREATE［まーやずくりえいと］です。 モーダルウィンドウ（ポップアップウィンドウ）の実装はついついプラグインに頼りがちですが、そういったものに頼らずに実装するケースもあります。 その度に一からコーディングするのも少し手間なので自分用も兼ねてプレーンなモーダルウィンドウのコードを残しておきます。 プレーンなモーダルウィンドウサンプル モーダルにも色々な仕様があるので実際は仕様に合わせたカスタマイズが必要になると思いますが、本当にプレーンなもので良ければ↓のコードそのままでもいいかと。 必要に応じて各指定を要カスタマイズです。 最低限ですが、領域外クリックでモーダルを閉じる機能のみ付けています。 See the Pen pure modal by mycreatesite (@mycreatesite) on CodePen. ↑をカスタマイズしたものがこのサイトのヘッダーナビ「What&#39;s new?」に実装してあります（2018/6/7現在）。 CSSアニメーションを付けてレスポンシブ化してあります。 補足 コピペ、と言われてもどこをどうコピペするかわからん！という方もいるかもしれませんのでざっくり補足しておきます。 CodePen「HTML」 モーダルを開くための要素には必ず要素にid=&quot;openModal&quot;を付与して下さい。 そして「モーダルエリアここから」「モーダルエリアここまで」部分をHTMLの適当な場所にコピペします。厳密にいうとbodyのケツ寄りの方が良いんですが、まあいいです（適当）。 「body閉じタグ直前でjQueryを読み込む」部分はその通りにします。 CodePen「CSS」 「モーダルCSS」部分以外は関連性薄いのでとりあえず気にしなくていいと思います。 「サイトによってここの数値は調整」部分はまあとりあえずこのままでいいです。z-indexは必要ない場合もあります。 モーダル内でスクロールを有効にしたい場合は後述「補足2」をご参照あれ。 CodePen「JS」 HTMLのjQuery読み込み部分の直後にscriptタグで囲って直接記述するか、外部ファイルで読み込むかして下さい。 ">
+<meta property="article:tag" content="css">
+<meta property="article:publisher" content="https://www.facebook.com/myscreate">
+<meta property="article:published_time" content="2018-06-06T07:01:24Z">
+<meta property="article:modified_time" content="2019-05-15T14:31:58Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hello_myscreate">
+<meta name="twitter:domain" content="myscreate.com">
+<meta name="twitter:title" content="コピペで実装！モーダルウィンドウ［HTML / CSS / jQuery］">
+<meta name="twitter:description" content="こんにちわ、ma-ya&#39;s CREATE［まーやずくりえいと］です。 モーダルウィンドウ（ポップアップウィンドウ）の実装はついついプラグインに頼りがちですが、そういったものに頼らずに実装するケースもあります。 その度に一からコーディングするのも少し手間なので自分用も兼ねてプレーンなモーダルウィンドウのコードを残しておきます。 プレーンなモーダルウィンドウサンプル モーダルにも色々な仕様があるので実際は仕様に合わせたカスタマイズが必要になると思いますが、本当にプレーンなもので良ければ↓のコードそのままでもいいかと。 必要に応じて各指定を要カスタマイズです。 最低限ですが、領域外クリックでモーダルを閉じる機能のみ付けています。 See the Pen pure modal by mycreatesite (@mycreatesite) on CodePen. ↑をカスタマイズしたものがこのサイトのヘッダーナビ「What&#39;s new?」に実装してあります（2018/6/7現在）。 CSSアニメーションを付けてレスポンシブ化してあります。 補足 コピペ、と言われてもどこをどうコピペするかわからん！という方もいるかもしれませんのでざっくり補足しておきます。 CodePen「HTML」 モーダルを開くための要素には必ず要素にid=&quot;openModal&quot;を付与して下さい。 そして「モーダルエリアここから」「モーダルエリアここまで」部分をHTMLの適当な場所にコピペします。厳密にいうとbodyのケツ寄りの方が良いんですが、まあいいです（適当）。 「body閉じタグ直前でjQueryを読み込む」部分はその通りにします。 CodePen「CSS」 「モーダルCSS」部分以外は関連性薄いのでとりあえず気にしなくていいと思います。 「サイトによってここの数値は調整」部分はまあとりあえずこのままでいいです。z-indexは必要ない場合もあります。 モーダル内でスクロールを有効にしたい場合は後述「補足2」をご参照あれ。 CodePen「JS」 HTMLのjQuery読み込み部分の直後にscriptタグで囲って直接記述するか、外部ファイルで読み込むかして下さい。 ">
+<meta name="twitter:image" content="https://myscreate.com/wp-content/uploads/2018/06/modal.jpg">
+<meta itemprop="image" content="https://myscreate.com/wp-content/uploads/2018/06/modal.jpg">
+			<script type="text/javascript">
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-117563332-1', 'auto');
+				// Plugins
+				
+				ga('send', 'pageview');
+			</script>
+			<script async="" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/analytics.js"></script>
+			<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="stylesheet" id="wp-block-library-css" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/styles.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://myscreate.com/wp-json/">
+<link rel="prev" title="乗っ取り・改竄リスクを減らす！WordPressのセキュリティ" href="https://myscreate.com/wp-security/">
+<link rel="next" title="コピペも可！CSSでラインが一周するホバーアニメーション" href="https://myscreate.com/favorite-line-animation/">
+<link rel="shortlink" href="https://myscreate.com/?p=746">
+<link rel="alternate" type="application/json+oembed" href="https://myscreate.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmyscreate.com%2Fpure-modal%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://myscreate.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmyscreate.com%2Fpure-modal%2F&amp;format=xml">
+  </head>
+  <body>
+  
+
+    <!--loadingArea-->
+        <!--loadingArea-->
+
+
+    <header class="header">
+      <h1 class="logoHeader">
+        <a href="https://myscreate.com/">
+          <svg version="1.1" id="mycLogo" class="mycLogo drawsvg-initialized " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 634.471 316.48" style="opacity: 1;">
+            <title>ma-ya's CREATE [まーやずくりえいと]</title>
+            <g stroke="#282828" stroke-width="1.5" fill="transparent" class="fillAnim">
+              <path id="m_1_" d="M339.75,65.099V44.163c0-2.896,1-5.33,2.644-7.303
+              	c1.643-1.971,3.842-2.956,6.201-2.956c3.971,0,6.155,2.419,6.155,7.257v23.938h8V44.879c0-3.074,0.589-5.659,2.188-7.749
+              	c1.604-2.09,3.497-3.135,5.804-3.135c4.044,0,6.009,2.045,6.009,6.136v24.969h8V38.117c0-3.018-1.218-5.621-3.345-7.816
+              	c-2.129-2.194-4.734-3.292-7.675-3.292c-2.396,0-4.542,0.612-6.354,1.836c-1.813,1.226-3.715,3.181-5.661,5.868
+              	c-1.105-2.688-2.468-4.646-4.063-5.868c-1.596-1.222-3.805-1.836-6.606-1.836c-2.15,0-4.235,0.538-5.896,1.612
+              	c-1.657,1.075-3.396,2.775-5.396,5.104v-5.627h-7v37h6.989L339.75,65.099z" style="stroke-dasharray: 300.565, 300.565; stroke-dashoffset: 0;"></path>
+              <path id="a_1_" d="M425.753,28.099v7.463h-0.003
+              	c-2-2.538-3.605-4.599-6.203-6.182c-2.602-1.583-5.428-2.374-8.32-2.374c-4.688,0-8.813,1.935-12.29,5.802
+              	c-3.479,3.866-5.237,8.384-5.237,13.549c0,5.466,1.717,10.107,5.164,13.932c3.448,3.824,7.759,5.732,12.626,5.732
+              	c5.614,0,10.265-2.792,14.265-8.376v7.454h7v-37H425.753z M422.875,55.294h-0.006c-2.426,2.436-5.324,3.649-8.705,3.649
+              	c-3.41,0-6.313-1.225-8.705-3.673c-2.396-2.447-3.592-5.42-3.592-8.914c0-3.226,1.229-6.029,3.682-8.421
+              	c2.453-2.39,5.324-3.583,8.615-3.583c3.381,0,6.279,1.202,8.705,3.604c2.424,2.403,3.636,5.293,3.636,8.667
+              	C426.514,49.971,425.304,52.86,422.875,55.294z" style="stroke-dasharray: 236.501, 236.501; stroke-dashoffset: 0;"></path>
+              <path id="_x2D__1_" d="M444.748,43.099h21v7h-21V43.099z" style="stroke-dasharray: 56, 56; stroke-dashoffset: 0;"></path>
+              <path id="y_1_" d="M491.739,55.81l-12.2,26.289h8.139l24.962-54H504.6
+              	l-9.268,20.075l-13.403-20.075h-8.84L491.739,55.81L491.739,55.81z" style="stroke-dasharray: 193.143, 193.143; stroke-dashoffset: 0;"></path>
+              <path id="a" d="M552.745,28.099l0.021,7.463h-0.019
+              	c-2-2.538-3.592-4.599-6.188-6.182s-5.416-2.374-8.313-2.374c-4.688,0-8.811,1.935-12.286,5.802
+              	c-3.479,3.866-5.235,8.384-5.235,13.549c0,5.466,1.716,10.107,5.165,13.932c3.448,3.824,7.745,5.732,12.611,5.732
+              	c5.61,0,10.243-2.792,14.243-8.376v7.454h8v-37H552.745z M549.893,55.294h0.005c-2.423,2.436-5.325,3.649-8.705,3.649
+              	c-3.411,0-6.313-1.225-8.706-3.673c-2.395-2.447-3.59-5.42-3.59-8.914c0-3.226,1.229-6.029,3.682-8.421
+              	c2.451-2.39,5.323-3.583,8.614-3.583c3.38,0,6.282,1.202,8.705,3.604c2.423,2.403,3.636,5.293,3.636,8.667
+              	C553.533,49.971,552.314,52.86,549.893,55.294z" style="stroke-dasharray: 238.461, 238.461; stroke-dashoffset: 0;"></path>
+              <path id="_x27__1_" d="M571.747,17.099h4.813
+              	c-0.061,3-1.553,6.171-4.479,9.099l3.584,3.315c1.817-1.673,3.329-3.647,4.403-5.89c1.075-2.241,1.676-4.396,1.676-6.427V7.1h-10
+              	v9.999h0.011H571.747z" style="stroke-dasharray: 64.2969, 64.2969; stroke-dashoffset: 0;"></path>
+              <path id="s_1_" d="M602.627,27.008c-3.492,0-6.397,1.022-8.713,3.067
+              	c-2.313,2.044-3.474,4.603-3.474,7.677c0,2.479,0.813,4.56,2.441,6.245c1.627,1.688,4.562,3.354,8.802,4.998
+              	c4.24,1.646,6.359,3.5,6.359,5.562c0,1.165-0.604,2.188-1.813,3.066c-1.21,0.882-2.621,1.32-4.231,1.32
+              	c-2.328,0-4.566-1.045-6.721-3.136l-6.137,2.957c3.345,4.837,7.63,7.256,12.854,7.256c3.436,0,6.42-1.155,8.959-3.469
+              	c2.536-2.313,3.808-5.02,3.808-8.121c0-2.655-0.881-4.922-2.645-6.802c-1.763-1.879-4.648-3.605-8.666-5.183
+              	c-4.019-1.574-6.022-3.198-6.022-4.871c0-2.329,1.582-3.494,4.747-3.494c1.345,0,2.509,0.247,3.493,0.738
+              	c0.982,0.491,2.147,1.218,3.493,2.173l5.194-4.569C610.028,28.814,606.117,27.008,602.627,27.008L602.627,27.008z" style="stroke-dasharray: 161.6, 161.6; stroke-dashoffset: 0;"></path>
+            </g>
+            <g stroke="#4bc9c7" stroke-width="3.5" fill="transparent" class="fillAnim">
+              <path id="c_2_" d="M57.294,209.277c-12.393,0-23.132,4.271-31.925,12.697
+              	c-8.802,8.432-13.264,18.713-13.264,30.555c0,12.055,4.537,22.493,13.485,31.028c8.939,8.53,19.862,12.854,32.463,12.854
+              	c8.589,0,16.871-1.983,24.231-5.896l0.459-0.291v-13.875l-0.938,0.657c-7.926,4.463-15.629,6.728-22.703,6.728
+              	c-9.729,0-17.979-2.996-24.436-8.903c-6.44-5.896-9.73-13.354-9.73-22.174c0-8.65,3.183-16.051,9.479-21.99
+              	c6.309-5.943,14.174-8.963,23.392-8.963c7.208,0,15.419,2.143,24.027,6.359l0.911,0.354v-13.545l-0.5-0.223
+              	c-8.484-3.601-17.01-5.399-24.952-5.399V209.277z" style="stroke-dasharray: 372.706, 372.706; stroke-dashoffset: 0;"></path>
+              <path id="r" d="M166.152,293.106l-0.002-0.001l-23.1-34.21
+              	c7.23-1.732,12.659-4.679,16.146-8.754c3.608-4.222,5.438-9.155,5.438-14.667c0-6.896-2.829-12.492-8.41-16.908
+              	c-5.543-4.39-12.813-6.472-21.604-6.472h-17.886v81.999h12.016v-34h1.619l22.283,33.41l0.414,0.59h13.614L166.152,293.106z
+              	 M129.823,249.787L129.823,249.787c-0.37,0-1.07,0-1.07-0.01v-27.188c6,0.02,10.266,0.409,13.301,1.157
+              	c3.059,0.756,5.513,2.197,7.338,4.287c1.813,2.074,2.723,4.797,2.723,8.08C152.113,245.314,144.847,249.787,129.823,249.787z" style="stroke-dasharray: 410.228, 410.228; stroke-dashoffset: 0;"></path>
+              <path id="e_2_" d="M200.912,212.097h-0.162v81.999h44.999v-12h-33v-27h33v-12
+              	h-33v-18.999h33v-12h-44.832H200.912z" style="stroke-dasharray: 385.996, 385.996; stroke-dashoffset: 0;"></path>
+              <path id="a_3_" d="M322.12,309.096l-6.474-14h-25.59l27.857-61.844
+              	l31.322,68.844h16.189l-47.164-104.229l-0.596-1.43l-0.592,1.256L267.7,307.692l-0.414,1.406h54.824L322.12,309.096z" style="stroke-dasharray: 494.878, 494.878; stroke-dashoffset: 0;"></path>
+              <path id="t_1_" d="M379.1,212.097h-0.359v12h19v69.999h12v-69.999h18.999v-12
+              	H379.1z" style="stroke-dasharray: 263.996, 263.996; stroke-dashoffset: 0;"></path>
+              <path id="e_3_" d="M508.318,212.097h-45.574v81.999h46v-12h-33.999v-27h33.999
+              	v-12h-33.999v-18.999h33.999v-12h-0.43H508.318z" style="stroke-dasharray: 392.002, 392.002; stroke-dashoffset: 0;"></path>
+            </g>
+            <g stroke="#282828" stroke-width="1" fill="transparent" class="fillAnim">
+              <path id="o" d="M618.758,279.383c0-8.189-2.96-15.31-8.79-21.148
+              	c-5.84-5.841-12.942-8.8-21.114-8.8c-8.224,0-15.36,2.959-21.213,8.8c-5.85,5.84-8.817,12.954-8.817,21.153
+              	c0,8.224,2.966,15.354,8.817,21.191c5.853,5.838,12.988,8.799,21.213,8.799c8.173,0,15.276-2.964,21.114-8.816
+              	c5.84-5.854,8.799-12.978,8.799-21.174L618.758,279.383z M605.798,296.416v0.003c-4.69,4.729-10.4,7.119-16.95,7.119
+              	c-6.604,0-12.339-2.391-17.049-7.102c-4.711-4.711-7.101-10.445-7.101-17.05c0-6.575,2.39-12.291,7.101-16.989
+              	c4.71-4.696,10.444-7.079,17.049-7.079c6.549,0,12.252,2.383,16.95,7.079c4.697,4.698,7.08,10.414,7.08,16.989
+              	C612.878,285.963,610.494,291.689,605.798,296.416z" style="stroke-dasharray: 339.975, 339.975; stroke-dashoffset: 0;"></path>
+              <path id="c_3_" d="M598.406,283.717l-0.49-0.146l-0.134,0.496
+              	c-0.593,2.228-1.716,3.985-3.338,5.24c-1.621,1.254-3.503,1.889-5.593,1.889c-3.052,0-5.367-0.981-7.079-3.008
+              	c-1.71-2.021-2.577-4.873-2.577-8.481c0-3.615,0.894-6.563,2.646-8.75c1.752-2.188,3.995-3.25,6.854-3.25
+              	c4.344,0,7.166,1.858,8.637,5.69l0.155,0.412l0.432-0.104l4.646-1.136l0.507-0.123l-0.145-0.502c-0.893-3.065-2.553-5.45-4.944-7.09
+              	c-2.379-1.627-5.346-2.45-8.813-2.45c-4.887,0-8.86,1.528-11.821,4.545c-2.96,3.014-4.46,7.055-4.46,12.012
+              	c0,5.521,1.439,9.922,4.288,13.088c2.856,3.183,6.813,4.796,11.759,4.796c3.557,0,6.699-0.984,9.34-2.932
+              	c2.648-1.948,4.428-4.704,5.286-8.191l0.114-0.466l-0.459-0.133l-4.82-1.431L598.406,283.717z" style="stroke-dasharray: 162.815, 162.815; stroke-dashoffset: 0;"></path>
+            </g>
+            <g stroke="#282828" stroke-width="3" fill="transparent" class="fillAnim">
+              <path id="grass" d="M624.406,95.359c-1.965-2.835-5.646-4.801-12.248-5.805
+              	c-21.354-3.249-42.874-6.943-64.429-8.433c-14.412-0.994-29.094-1.616-43.542-1.297c-56.044,1.235-116.229,12.772-127.358,16.886
+              	c-11.11,4.131-37.907,13.203-45.729,14.845c-7.832,1.654-14.004,1.234-14.004,1.234s-6.2,0.42-14.004-1.234
+              	c-7.842-1.642-34.618-10.714-45.751-14.845c-11.146-4.11-71.3-15.647-127.349-16.885c-36-0.8-74.678,1.955-109.778,10.464
+              	c-13.35,3.233-12.7,9.216-11.742,21.388c0.562,7.097,0.993,14.204,1.625,21.299c0,0,1.642,4.126,2.063,5.354
+              	c0.409,1.25,5.821,7.837,10.771,11.946c4.933,4.133,10.714,28.015,13.604,34.62c1.442,3.304,4.647,10.226,8.313,17.709
+              	c3.97-0.885,8.113-1.34,12.436-1.34c1.592,0,3.208,0.088,4.836,0.217c-0.439-0.856-0.86-1.717-1.26-2.569
+              	c-14.016-30.084-13.213-63.043-13.213-63.043c0.42-3.718,0-19.959,5.371-26.961c5.359-7.009,5.771-8.313,15.663-11.203
+              	c9.883-2.876,50.982-5.11,82.303-3.461c31.311,1.646,84.479,11.123,94.782,14.834c10.305,3.706,18.137,7.832,25.156,16.896
+              	c6.991,9.065,11.112,13.606,9.862,25.557c-1.223,11.949-12.334,53.968-16.887,63.038c-3.813,7.617-9.377,15.508-20.813,20.523h2.623
+              	c4.418,0,8.021,3.582,8.021,8v5.021c12.271-5.979,20.518-22.203,25.016-32.315c4.938-11.123,9.479-24.309,13.584-35.852
+              	c4.121-11.537,10.741-31.72,14.003-34.604c3.32-2.887,10.742-1.649,10.742-1.649s7.412-1.233,10.69,1.649
+              	c3.313,2.887,9.912,23.066,14.033,34.604c4.11,11.543,8.633,24.729,13.584,35.852c4.95,11.134,14.424,29.679,28.865,33.799
+              	c1.526,0.438,3.376,0.894,5.479,1.354v-16.447c-1.577-0.752-3.046-1.559-4.398-2.412h-6.597c-4.42,0-8-3.581-8-7.999v-8.536
+              	c-0.174-0.33-0.349-0.66-0.514-0.988c-4.521-9.069-15.664-51.089-16.886-63.038c-1.25-11.946,2.87-16.486,9.894-25.557
+              	c6.992-9.063,14.834-13.188,25.146-16.896c10.283-3.711,63.456-13.188,94.766-14.834c31.328-1.65,72.432,0.585,82.313,3.461
+              	c9.894,2.892,10.313,4.193,15.663,11.203c5.359,7.002,4.939,23.243,5.359,26.961c0,0,0.83,32.959-13.185,63.043
+              	c-6.61,14.196-19.375,29.257-29.696,32.968c-5.396,1.941-15.535,4.566-28.118,6.922c0.79,1.24,1.254,2.709,1.254,4.289v11.018
+              	c17.612-2.771,30.196-6.334,37.605-8.634c11.943-3.711,17.306-10.702,23.906-21.835c6.581-11.134,16.476-32.146,19.354-38.74
+              	c2.893-6.604,8.662-30.487,13.604-34.62c4.951-4.109,10.361-10.696,10.765-11.946c0.42-1.229,2.069-5.354,2.069-5.355
+              	c0.48-5.429,0.929-10.859,1.354-16.295c0.779-9.311,2.359-16.561-0.949-21.342L624.406,95.359z" style="stroke-dasharray: 2264.85, 2264.85; stroke-dashoffset: 0;"></path>
+              <path id="grass1" d="M79.813,245.477c6.121,1.9,15.799,4.67,28.932,7.139
+              	v-15.824c-7.955-1.752-14.313-3.506-18.206-4.905c-0.169-0.063-0.342-0.134-0.512-0.198c-0.595,1.32-1.529,2.48-2.762,3.326
+              	c-1.352,0.924-2.931,1.398-4.521,1.398c-0.978,0-1.954-0.18-2.891-0.539l-0.91-0.354c-0.216-0.084-0.427-0.178-0.634-0.275
+              	c-6.619-3.244-12.984-5.108-18.563-5.471c5.146,7.64,10.479,12.739,20.063,15.71L79.813,245.477z" style="stroke-dasharray: 124.406, 124.406; stroke-dashoffset: 0;"></path>
+              <path id="grass2" d="M192.752,243.837v13.582
+              	c-9.778,0.578-20.007,0.849-30.143,0.644c0.963-0.856,1.863-1.765,2.687-2.724c2.802-3.273,4.826-6.975,6.036-10.941
+              	c7.159,0.08,14.398-0.13,21.409-0.562L192.752,243.837z" style="stroke-dasharray: 81.5859, 81.5859; stroke-dashoffset: 0;"></path>
+              <path id="grass3" d="M454.748,244.367
+              	c-13.106-0.234-26.051-1.346-36.998-2.908v13.908c11.183,1.278,23.911,2.272,36.998,2.625v-13.63V244.367z" style="stroke-dasharray: 101.78, 101.78; stroke-dashoffset: 0;"></path>
+            </g>
+          </svg>
+        </a>
+      </h1>
+      <nav id="navHeader" class="navHeader">
+        <ul>
+          <li class="logoFollow">
+            <a href="https://myscreate.com/"><img src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myc_logo_blk.svg" alt="ma-ya&#39;s CREATE [まーやずくりえいと]"></a>
+          </li>
+          <li><a class="modalOpen">what's new?</a></li>
+          <li><a href="https://myscreate.com/?id=introduction">introduction</a></li>
+          <li><a href="https://myscreate.com/?id=skills">skills</a></li>
+          <li><a href="https://myscreate.com/?id=gallery">gallery</a></li>
+          <li><a href="https://myscreate.com/?id=blog">blog</a></li>
+          <li><a href="https://myscreate.com/?id=contact">contact</a></li>
+        </ul>
+      </nav><nav id="cloneNav" class="navHeader cloneNav isShow">
+        <ul>
+          <li class="logoFollow" style="display: inline-block;">
+            <a href="https://myscreate.com/"><img src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myc_logo_blk.svg" alt="ma-ya&#39;s CREATE [まーやずくりえいと]"></a>
+          </li>
+          <li><a class="modalOpen">what's new?</a></li>
+          <li><a href="https://myscreate.com/?id=introduction">introduction</a></li>
+          <li><a href="https://myscreate.com/?id=skills">skills</a></li>
+          <li><a href="https://myscreate.com/?id=gallery">gallery</a></li>
+          <li><a href="https://myscreate.com/?id=blog">blog</a></li>
+          <li><a href="https://myscreate.com/?id=contact">contact</a></li>
+        </ul>
+      </nav>
+      <nav id="spNavHeader" class="spNavHeader">
+        <ul>
+          <li class="logoSpNav">
+            <a href="https://myscreate.com/"><img src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myc_logo_w.svg" alt="ma-ya&#39;s CREATE [まーやずくりえいと]"></a>
+          </li>
+          <li><a class="modalOpen">what's new?</a></li>
+          <li><a href="https://myscreate.com/?id=introduction">introduction</a></li>
+          <li><a href="https://myscreate.com/?id=skills">skills</a></li>
+          <li><a href="https://myscreate.com/?id=gallery">gallery</a></li>
+          <li><a href="https://myscreate.com/?id=blog">blog</a></li>
+          <li><a href="https://myscreate.com/?id=contact">contact</a></li>
+        </ul>
+      </nav>
+      <div id="hambBtn" class="hambBtn">
+        <div class="hambBtn1"></div>
+        <div class="hambBtn2"></div>
+        <div class="hambBtn3"></div>
+      </div>
+      <p class="keycolorTx italic subTxt">- web design -</p>
+    </header>
+
+    <div class="contentsWrap clearfix">
+      <p class="heading" style="opacity: 1;"><span style="visibility: hidden;"><span class="word1" style="display: inline-block; transform: translate3d(0px, 0px, 0px);"><span class="char1" style="display: inline-block; visibility: visible;">b</span><span class="char2" style="display: inline-block; visibility: visible;">l</span><span class="char3" style="display: inline-block; visibility: visible;">o</span><span class="char4" style="display: inline-block; visibility: visible;">g</span></span> </span><ul class="texts" style="display: none;"><li class="current">blog</li></ul></p>
+
+      <div class="mainContent">
+                  <article id="post-746" class="articleArea post-746 post type-post status-publish format-standard has-post-thumbnail hentry category-css">
+            <h1 class="articleAreaBlogTitle">コピペで実装！モーダルウィンドウ［HTML / CSS / jQuery］</h1>
+            <p class="postDate"><time datetime="2018-06-06">2018.06.06</time></p>
+            <p class="category keycolorBg">
+              <a href="https://myscreate.com/category/css/">
+                CSS              </a>
+            </p>
+            <section class="articleAreaBody">
+              <p>こんにちわ、ma-ya’s CREATE［まーやずくりえいと］です。</p>
+<p>&nbsp;</p>
+<p>モーダルウィンドウ（ポップアップウィンドウ）の実装はついついプラグインに頼りがちですが、そういったものに頼らずに実装するケースもあります。</p>
+<p>その度に一からコーディングするのも少し手間なので自分用も兼ねてプレーンなモーダルウィンドウのコードを残しておきます。</p>
+<p>&nbsp;</p>
+<h2>プレーンなモーダルウィンドウサンプル</h2>
+<p>モーダルにも色々な仕様があるので実際は仕様に合わせたカスタマイズが必要になると思いますが、本当にプレーンなもので良ければ↓のコードそのままでもいいかと。</p>
+<p>必要に応じて各指定を要カスタマイズです。</p>
+<p>最低限ですが、領域外クリックでモーダルを閉じる機能のみ付けています。</p>
+<p>&nbsp;</p>
+<div class="cp_embed_wrapper"><iframe name="cp_embed_1" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/BVKMpM(1).html" scrolling="no" frameborder="0" height="400" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="pure modal" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;" id="cp_embed_BVKMpM"></iframe></div>
+<p><script async="" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/ei.js"></script></p>
+<p>&nbsp;</p>
+<p>↑をカスタマイズしたものがこのサイトのヘッダーナビ「<strong>What’s new?</strong>」に実装してあります（2018/6/7現在）。</p>
+<p>CSSアニメーションを付けてレスポンシブ化してあります。</p>
+<p>&nbsp;</p>
+<h2>補足</h2>
+<p>コピペ、と言われてもどこをどうコピペするかわからん！という方もいるかもしれませんのでざっくり補足しておきます。</p>
+<p>&nbsp;</p>
+<h4>CodePen「HTML」</h4>
+<p>モーダルを開くための要素には必ず要素に<strong>id=”openModal”</strong>を付与して下さい。</p>
+<p>そして「モーダルエリアここから」「モーダルエリアここまで」部分をHTMLの適当な場所にコピペします。厳密にいうとbodyのケツ寄りの方が良いんですが、まあいいです（適当）。</p>
+<p>「body閉じタグ直前でjQueryを読み込む」部分はその通りにします。</p>
+<p>&nbsp;</p>
+<h4>CodePen「CSS」</h4>
+<p>「モーダルCSS」部分以外は関連性薄いのでとりあえず気にしなくていいと思います。</p>
+<p>「サイトによってここの数値は調整」部分はまあとりあえずこのままでいいです。z-indexは必要ない場合もあります。</p>
+<p>モーダル内でスクロールを有効にしたい場合は後述「補足2」をご参照あれ。</p>
+<p>&nbsp;</p>
+<h4>CodePen「JS」</h4>
+<p>HTMLの<strong>jQuery読み込み部分の直後</strong>にscriptタグで囲って直接記述するか、外部ファイルで読み込むかして下さい。</p>
+<p>&nbsp;</p>
+<h2>補足2：モーダル内コンテンツが多く、スクロールさせたい場合</h2>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-1180 aligncenter" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/modalscroll.gif" alt="modalscroll" width="578" height="390"></p>
+<p>&nbsp;</p>
+<p>コンテンツ量によっては、モーダル内スクロールが必要となるケースもあるかと思います。</p>
+<p>パパッと実装するなら下記二行をCSS「modalWrapper」クラスに追記するだけ。</p>
+<p>&nbsp;</p>
+<h4>CSS(.modalWrapperに追記)</h4>
+<pre>.modalWrapper {
+ ...
+  height : 50%;<span style="color: #999999;"> //お好みの高さで固定</span>
+  overflow : auto;<span style="color: #999999;"> //状況に応じて縦スクロールバーが出現
+</span>...
+}</pre>
+<p>これで↑のGIFアニメのような挙動になるかと思います。</p>
+<p>&nbsp;</p>
+<p>本当にシンプルなのでカスタマイズもそれなりにしやすいかと勝手に思っております。</p>
+<p>よろしければ参考にしてみて下さいませ！</p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h4>脱jQueryバージョンも作りました</h4>
+<ul>
+<li><a href="https://myscreate.com/modal-without-jquery/" target="_blank" rel="noopener noreferrer">コピペで実装！脱jQueryでも簡単モーダルウィンドウ［HTML / CSS / Javascript］</a></li>
+</ul>
+<p>&nbsp;</p>
+<h4>その他コピペ・サンプル系記事</h4>
+<ul>
+<li><a href="https://myscreate.com/loading-view/" target="_blank" rel="noopener noreferrer">コピペで簡単！シンプルなローディング画面</a></li>
+<li><a href="https://myscreate.com/pure-slide/" target="_blank" rel="noopener noreferrer">コピペで簡単！超シンプルスライドショー［HTML / CSS / jQuery］</a></li>
+<li><a href="https://myscreate.com/favorite-line-animation/" target="_blank" rel="noopener noreferrer">コピペも可！CSSでラインが一周するホバーアニメーション</a></li>
+<li><a href="https://myscreate.com/modal-without-jquery/" target="_blank" rel="noopener noreferrer">コピペで実装！脱jQueryでも簡単モーダルウィンドウ［HTML / CSS / Javascript］</a></li>
+</ul>
+<h5><em><time datetime="2019-05-04">2019/05/04</time> 脱jQueryバージョン記事へのリンク追加<br>
+2019/01/09&nbsp;「補足2」を追記<br>
+2018/10/11 「補足」部分とCodePen内コメントを更新<br>
+</em></h5>
+            </section>
+          </article>
+        
+        <div class="prevNext">
+                      <p><a href="https://myscreate.com/wp-security/" rel="prev">&lt; prev</a></p>
+          
+                      <p><a href="https://myscreate.com/favorite-line-animation/" rel="next">next &gt;</a></p>
+                  </div>
+      </div>
+
+      <aside class="sideBar">
+  <div class="sideLogo">
+    <img src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/sideLogo.svg">
+  </div>
+  <div class="searchArea">
+    <form class="searchForm" action="https://myscreate.com/" method="get">
+      <input class="searchInput" type="text" value="" name="s" id="s">
+      <button class="searchBtn" type="submit">
+        <i class="fas fa-search faa-vertical faa-slow animated"></i>
+      </button>
+    </form>
+  </div>
+  <div class="linkToAllArea">
+    <a class="btn btnToList" href="https://myscreate.com/allblogs">all blogs</a>
+    <a class="btn btnToList" href="https://myscreate.com/gallery">to gallery</a>
+  </div>
+  <div class="categoryArea">
+    <h4 class="headingSide">category</h4>
+    <ul>
+      	<li class="cat-item cat-item-4"><a href="https://myscreate.com/category/css/">CSS</a> (20)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://myscreate.com/category/design/">Design</a> (3)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://myscreate.com/category/dtp/">DTP</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://myscreate.com/category/ps-ai/">GraphicTools</a> (3)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://myscreate.com/category/html/">HTML</a> (2)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://myscreate.com/category/javascript/">JavaScript</a> (18)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://myscreate.com/category/music/">Music</a> (4)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://myscreate.com/category/pc/">PC</a> (2)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://myscreate.com/category/wordpress/">WordPress</a> (11)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://myscreate.com/category/info/">お知らせ</a> (6)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://myscreate.com/category/column/">ぼやき</a> (3)
+</li>
+	<li class="cat-item cat-item-12"><a href="https://myscreate.com/category/hacks/">小ネタ</a> (2)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://myscreate.com/category/stuffed-hungover/">飯と酒</a> (9)
+</li>
+    </ul>
+  </div>
+  <div class="archiveArea">
+    <h4 class="headingSide">archive</h4>
+    <ul>
+      	<li><a href="https://myscreate.com/2019/05/">2019.05</a>&nbsp;(6)</li>
+	<li><a href="https://myscreate.com/2019/04/">2019.04</a>&nbsp;(4)</li>
+	<li><a href="https://myscreate.com/2019/03/">2019.03</a>&nbsp;(1)</li>
+	<li><a href="https://myscreate.com/2019/02/">2019.02</a>&nbsp;(1)</li>
+	<li><a href="https://myscreate.com/2019/01/">2019.01</a>&nbsp;(3)</li>
+	<li><a href="https://myscreate.com/2018/12/">2018.12</a>&nbsp;(4)</li>
+	<li><a href="https://myscreate.com/2018/10/">2018.10</a>&nbsp;(10)</li>
+	<li><a href="https://myscreate.com/2018/09/">2018.09</a>&nbsp;(1)</li>
+	<li><a href="https://myscreate.com/2018/08/">2018.08</a>&nbsp;(2)</li>
+	<li><a href="https://myscreate.com/2018/07/">2018.07</a>&nbsp;(4)</li>
+	<li><a href="https://myscreate.com/2018/06/">2018.06</a>&nbsp;(10)</li>
+	<li><a href="https://myscreate.com/2018/05/">2018.05</a>&nbsp;(16)</li>
+	<li><a href="https://myscreate.com/2018/04/">2018.04</a>&nbsp;(22)</li>
+    </ul>
+  </div>
+</aside>
+      
+    </div>
+
+    <section id="modalArea" class="modalArea">
+  <div id="modalOuter" class="modalOuter"></div>
+    <div class="modalInner">
+      <div class="modalWrapper">
+        <div id="modalClose" class="modalClose">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="modalContents">
+          <h2 class="modalHeading">What's new?</h2>
+          <p class="italic keycolorTx subTxt">- the latest post -</p>
+                                            <div class="modalThumb animated flipInY">
+                                  <img src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/tanbou_eyecatch03.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="tanbou_eyecatch03">                              </div>
+            <a href="https://myscreate.com/tanbou-3/">
+              <div class="modalPostArea">
+                <p class="modalPostType">
+                                      <span class="modalTypePost">blog</span>
+                                  </p>
+                <p class="modalPostDate"><span class="modalDateDesc">posted on</span><time datetime="2019-05-29">2019.05.29</time></p>
+                                  <h3 class="modalPostTitle modalPostIcon">日吉本町探訪 – さんようけん（中華）</h3>
+                              </div>
+            </a>
+            <a class="btn modalBtn" href="https://myscreate.com/tanbou-3/">check</a>
+                            </div>
+      </div>
+    </div>
+</section>
+    <footer class="footer">
+  <div class="snsIconS">
+    <a href="https://twitter.com/hello_myscreate" target="_blank" rel="noopener"><i class="fab fa-twitter snsIcon"></i></a>
+    <a href="https://www.facebook.com/myscreate/" target="_blank" rel="noopener"><i class="fab fa-facebook-square snsIcon"></i></a>
+    <a href="https://github.com/mycreatesite/" target="_blank" rel="noopener"><i class="fab fa-github snsIcon"></i></a>
+    <a href="https://codepen.io/mycreatesite/" target="_blank" rel="noopener"><i class="fab fa-codepen snsIcon"></i></a>
+  </div>
+  <a href="https://myscreate.com/"><img class="logo-footer" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myc_logo_w.svg" alt="ma-ya&#39;s CREATE [まーやずくりえいと]"></a>
+  <p class="copyright">© Copyright 2018 │ ma-ya’s CREATE All rights reserved.</p>
+</footer>
+
+
+<!--rollBack-->
+<div id="rollBack" style="display: block;">
+  <i class="fas fa-chevron-up faa-float animated" aria-hidden="true"></i>
+</div>
+<!--rollBack-->
+
+
+<!--mogiFooter-->
+<!--mogiFooter-->
+
+
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/jquery.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/myscreate.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/scripts.js"></script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myplugins.js"></script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/lodash.min.js"></script>
+<script type="text/javascript" src="./コピペで実装！モーダルウィンドウ［HTML _ CSS _ jQuery］ – ma-ya&#39;s CREATE _ WEB DESIGN_files/myscript.js"></script>
+
+
+<!--drawsvg-->
+<script>jQuery(function(){var mycLogo=jQuery("#mycLogo").drawsvg({duration:1000,stagger:80,easing:"swing",callback:function(){jQuery("#mycLogo g").addClass("fillAnim")}});mycLogo.css("opacity",1).drawsvg("animate");});</script>
+<!--front-plugin-setting.js_minified-->
+
+
+
+</body></html>

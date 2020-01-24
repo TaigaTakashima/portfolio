@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+/*初期化*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+img {
+    vertical-align: bottom;
+    /*画像のベースラインを下にする*/
+}
+
+a {
+    text-decoration: none;
+    /*aの下線を非表示にする*/
+}
+
+#wrapper {
+    width: 960px;
+    /*ページサイズ960px*/
+    margin: 0 auto;
+    /*センター揃え配置*/
+}
+
+#contents img {
+    max-width: 100%;
+    /*画像の横幅の最大値を親要素に合わせる*/
+}
+
+
+/*以下、レイアウトを完成させてください！*/
+
+
+/*左右間・上下間のmarginは完成イメージを参照の上、大体でOKです*/
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#header ul {
+    display: flex;
+}
+
+#header li {
+    margin: 0px 5px;
+}
+
+#navi {
+    margin-bottom: 20px;
+}
+
+#navi ul {
+    display: flex;
+}
+
+#navi li {
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    padding: 0 10px;
+}
+
+#navi li+li {
+    border-left: 0;
+    border-right: 1px solid gray;
+}
+
+#contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.item {
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 30px;
+    border: solid gray 1px;
+    box-shadow: 0 1px 3px #aaaaaa;
+}
+
+.item h2 {
+    text-align: center;
+}
+
+.item a {
+    display: block;
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.item p {
+    margin-bottom: 5px;
+}
+
+#footNavi {
+    display: flex;
+    padding: 30px;
+}
+
+#footNavi ul {
+    margin-right: 50px;
+}
+
+#footer {
+    background-color: gray;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+}

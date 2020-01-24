@@ -1,0 +1,207 @@
+@charset "utf-8";
+body {
+  background: linear-gradient(#686868, #0f0f0f);
+  color: #d6d6d6;
+  text-shadow: 2px 2px 15px #202020;
+  font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+  overflow: auto;
+}
+
+/*リンクのスタイル*/
+a {
+  color: #d6d6d6;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/*上のナビゲーション*/
+nav ul {
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%;
+}
+nav li > a {
+  text-align: center;
+  display: table;
+  width: 100%;
+  padding: 10px;
+}
+nav li > a span {
+  display: table-cell;
+  vertical-align: middle;
+}
+/*下のナビゲーション*/
+#undernavi {
+  font-size: 12px;
+  clear: both;
+}
+
+/*トップのロゴマーク*/
+#top {
+  text-align: center;
+}
+/*トップページのスライド*/
+#topslider {
+  width: 80%;
+  margin: 100px auto;
+  padding: 30px 30px;
+  background-color: #303030;
+  box-shadow: 0px 0px 10px #202020;
+  border-radius: 5px;
+}
+/*トップページプロフィールとアルバム*/
+.top_prof_album {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: 100px auto;
+}
+/*トップページプロフィール紹介*/
+.topprofile {
+  background-color: #303030;
+  box-shadow: 0px 0px 10px #202020;
+  padding: 10px 10px;
+  height: 450px;
+  text-align: left;
+  border-radius: 5px;
+  float: left;
+  position: relative;
+}
+.topprofile table {
+  font-size: 15px;
+  border-spacing: 10px;
+}
+/*トップページ好きなアルバム紹介*/
+.favoritealbum {
+  background-color: #303030;
+  box-shadow: 0px 0px 10px #202020;
+  padding: 10px 10px;
+  height: 450px;
+  text-align: left;
+  border-radius: 5px;
+  float: right;
+  position: relative;
+}
+.favoritealbum table {
+  font-size: 10px;
+  border-spacing: 10px;
+  width: 138px;
+}
+/*アルバム紹介ページのテーブル*/
+#albumtable {
+  background-color: #303030;
+  box-shadow: 0px 0px 10px #202020;
+  padding: 10px 10px;
+  border-spacing: 80px 50px;
+  margin: 0px auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+}
+/*アルバムアート画像*/
+.albumart {
+  box-shadow: 5px 5px 10px #202020;
+}
+* {
+  box-sizing: border-box;
+}
+/*モーダルのstyle*/
+.modal-content {
+  position: fixed;
+  display: none;
+  z-index: 2;
+  width: 50%;
+  margin: 0;
+  padding: 10px 20px;
+  border: 3px solid #ffffff;
+  background: #686868;
+  color: #d6d6d6;
+  overflow: auto;
+  max-height: 85%;
+}
+/*モーダルの中のテーブル*/
+.modal-content table,
+.modal-content td,
+.modal-content th {
+  border: 2px #969696 solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+/*モーダルの背景*/
+.modal-overlay {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+/*モーダルの中のclose*/
+.modal-close {
+  color: #d6d6d6;
+  text-decoration: none;
+}
+.modal-close:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*モーダルのボタン*/
+.modalbutton {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  background-color: #686868;
+  border: 1px solid #282828;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  box-shadow: 0px 0px 10px #202020;
+  transition: all 0.6s ease;
+}
+.modalbutton:hover {
+  color: #686868;
+  background: #ffffff;
+  border: 1px solid #282828;
+}
+
+/*プロフィールページ*/
+.profile {
+  background-color: #303030;
+  box-shadow: 0px 0px 10px #202020;
+  padding: 30px 30px;
+  width: 80%;
+  height: auto;
+  margin: 0px auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: left;
+  border-radius: 5px;
+}
+.profilepicture {
+  float: left;
+  width: 50%;
+}
+.profiletext {
+  font-size: 15px;
+  float: right;
+  width: 50%;
+  line-height: 33px;
+}
+.prfiledescription {
+  clear: both;
+  line-height: 30px;
+  padding: 30px 30px;
+}
+.recommendedpoint {
+  font-size: 15px;
+  line-height: 30px;
+  padding: 30px 30px;
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.coolwebwindow.com/jquery-lab/archives/304 -->
+<html dir="ltr" lang="ja"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>jQueryでモーダルウィンドウを作る方法 | jQuery.lab</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/style.css">
+<link rel="pingback" href="https://www.coolwebwindow.com/jquery-lab/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://www.coolwebwindow.com/jquery-lab/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="jQuery.lab » フィード" href="https://www.coolwebwindow.com/jquery-lab/feed">
+<link rel="alternate" type="application/rss+xml" title="jQuery.lab » コメントフィード" href="https://www.coolwebwindow.com/jquery-lab/comments/feed">
+<link rel="stylesheet" id="shCore-css" href="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/shCore.css" type="text/css" media="all">
+<link rel="stylesheet" id="shThemeDefault-css" href="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/shThemeDefault.css" type="text/css" media="all">
+<script async="" src="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/analytics.js"></script><script type="text/javascript" src="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.coolwebwindow.com/jquery-lab/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.coolwebwindow.com/jquery-lab/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="jQueryで画像をランダムに表示する方法" href="https://www.coolwebwindow.com/jquery-lab/archives/292">
+<link rel="next" title="1行テキストをフェードインしながら切り替えるjQueryスクリプト" href="https://www.coolwebwindow.com/jquery-lab/archives/314">
+<meta name="generator" content="WordPress 3.3.2">
+<link rel="canonical" href="https://www.coolwebwindow.com/jquery-lab/archives/304">
+<link rel="shortlink" href="https://www.coolwebwindow.com/jquery-lab/?p=304">
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-343651-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/tracking.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+    jQuery("a").click(function(e) {
+        var ahref = jQuery(this).attr('href');
+        if (ahref.indexOf("websae.net") != -1 || ahref.indexOf("http") == -1 ) {
+            ga('send', 'event', 'Inbound Links', 'Click', ahref);
+        }
+        else {
+            ga('send', 'event', 'Outbound Links', 'Click', ahref);
+        }
+    });
+});
+</script>
+</head>
+
+<body class="single single-post postid-304 single-format-standard single-author singular two-column right-sidebar">
+<div id="page" class="hfeed">
+
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="https://www.coolwebwindow.com/jquery-lab/" title="jQuery.lab" rel="home">jQuery.lab</a></span></h1>
+				<h2 id="site-description">jQueryの勉強サイトです。このサイトで公開しているソースコードは個人・商用問わずご利用いただけますが、バグ等も含まれる可能性があります。その点をご了承の上、ご参考ください。ライセンスの明記は不要です。</h2>
+			</hgroup>
+
+			
+								<form method="get" id="searchform" action="https://www.coolwebwindow.com/jquery-lab/">
+		<label for="s" class="assistive-text">検索</label>
+		<input type="text" class="field" name="s" id="s" placeholder="検索">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="検索">
+	</form>
+			
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">メインメニュー</h3>
+								<div class="skip-link"><a class="assistive-text" href="http://www.coolwebwindow.com/jquery-lab/archives/304#content" title="メインコンテンツへ移動">メインコンテンツへ移動</a></div>
+				<div class="skip-link"><a class="assistive-text" href="http://www.coolwebwindow.com/jquery-lab/archives/304#secondary" title="サブコンテンツへ移動">サブコンテンツへ移動</a></div>
+								<div class="menu-%e3%81%8a%e5%8b%a7%e3%82%81%e3%81%ae%e6%9c%ac-container"><ul id="menu-%e3%81%8a%e5%8b%a7%e3%82%81%e3%81%ae%e6%9c%ac" class="menu"></ul></div>			</nav><!-- #access -->
+
+	</header><!-- #branding -->
+
+
+	<div id="main">
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">投稿ナビゲーション</h3>
+						<span class="nav-previous"><a href="https://www.coolwebwindow.com/jquery-lab/archives/292" rel="prev"><span class="meta-nav">←</span> 前へ</a></span>
+						<span class="nav-next"><a href="https://www.coolwebwindow.com/jquery-lab/archives/314" rel="next">次へ <span class="meta-nav">→</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-304" class="post-304 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		<h1 class="entry-title">[ プログラミング ] jQueryでモーダルウィンドウを作る方法</h1>
+
+				<div class="entry-meta">
+			<span class="sep">投稿日:</span><a href="https://www.coolwebwindow.com/jquery-lab/archives/304" title="10:06 PM" rel="bookmark"><time class="entry-date" datetime="2014-07-07T22:06:52+00:00" pubdate="">2014/07/07</time></a><span class="by-author"> <span class="sep">作成者:</span> <span class="author vcard"><a class="url fn n" href="https://www.coolwebwindow.com/jquery-lab/archives/author/admin" title="admin の投稿をすべて表示" rel="author">admin</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>
+[2018/01/07追記]<br>
+ダウンロード用のファイルを用意しました。
+</p>
+<ul class="link">
+<li><a href="http://www.coolwebwindow.com/jquery-plugin/plugins/modal_fix/index.html" target="_blank">jQueryプラグイン無料配布 モーダルウィンドウ（固定バージョン） [Cool Web Window]</a></li>
+</ul>
+<p>[2014/12/20]<br>
+ソースコードにミスがあったので大幅に修正しました。
+</p>
+<p>
+こちらの記事を見て、簡単にモーダルウィンドウが作れるようなので、試しに作ってみました。
+</p>
+<ul class="link">
+<li>
+<a href="http://syncer.jp/jquery-modal-window">初心者でも分かる！モーダルウィンドウの作り方 – Syncer</a>
+</li>
+</ul>
+<p>
+あと、これだと複数のモーダルウィンドウが作れないので、以下の記事を参考に、複数バージョンにしてみました。
+</p>
+<ul>
+<li class="link">
+<a href="http://zxcvbnmnbvcxz.com/jquery-easy-modalwindow/">jQuery 簡単にモーダルウィンドウを実装する方法 (プラグイン不要) | Stronghold</a>
+</li>
+</ul>
+<p>
+両サイトの方、ありがとうございます！
+</p>
+<p>
+ちなみに、モーダルウィンドウとは、
+</p>
+<blockquote cite="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/モーダルウィンドウ" title="モーダルウィンドウとは (modal window)： - IT用語辞典バイナリ">
+<p>モーダルウィンドウとは、操作が完了するまで親ウィンドウへの操作を受け付けなくさせるタイプのウィンドウのことである。    モーダルウィンドウが表示されると、その中で指定された操作を完了するかキャンセルするかして、そのウィンドウを閉じない限り、親ウィンドウ側に対する操作ができないようになる。このため、モーダルウィンドウはユーザーに特定の操作をさせたり、確認を促したりといった目的で用いられることが多い。</p>
+</blockquote>
+<p class="resource"><a href="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/モーダルウィンドウ">モーダルウィンドウとは (modal window)： – IT用語辞典バイナリ</a>より引用</p>
+<p>
+といったものです。
+</p>
+<p>
+デモは以下からどうぞ。
+</p>
+<p class="demo"><a href="http://www.coolwebwindow.com/jquery-lab/wp-content/demo/modal/">DOMO</a></p>
+<p>
+HTML5でコーディングしています。コードが少ないので、jQueryもCSSもHTMLのheadタグ内に書いています。
+</p>
+<p class="lang-name">HTML</p>
+<div id="highlighter_337448" class="syntaxhighlighter  "><div class="bar                                                                                                                                                                                                     "><div class="toolbar"><a href="http://www.coolwebwindow.com/jquery-lab/archives/304#viewSource" title="プレインテキスト" class="item viewSource" style="width: 16px; height: 16px;">プレインテキスト</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_337448_clipboard" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_337448" menu="false" src="https://www.coolwebwindow.com/jquery-lab/wp-content/plugins/syntax-highlighter/2.1.364/js/clipboard.swf"></div><a href="http://www.coolwebwindow.com/jquery-lab/archives/304#printSource" title="印刷" class="item printSource" style="width: 16px; height: 16px;">印刷</a><a href="http://www.coolwebwindow.com/jquery-lab/archives/304#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>001</code></td><td class="content"><code class="plain">&lt;!DOCTYPE html&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>002</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">html</code> <code class="color1">lang</code><code class="plain">=</code><code class="string">"ja"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>003</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">head</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>004</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">meta</code> <code class="color1">charset</code><code class="plain">=</code><code class="string">"utf-8"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>005</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">title</code><code class="plain">&gt;[DEMO]jQueryでモーダルウィンドウを作る方法&lt;/</code><code class="keyword">title</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>006</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">script</code> <code class="color1">src</code><code class="plain">=</code><code class="string">"js/jquery.js"</code><code class="plain">&gt;&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>007</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>008</code></td><td class="content"><code class="plain">$(function(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>009</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// 「.modal-open」をクリック</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>010</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('.modal-open').click(function(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>011</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// オーバーレイ用の要素を追加</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>012</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('body').append('&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-overlay"</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;');</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>013</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// オーバーレイをフェードイン</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>014</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('.modal-overlay').fadeIn('slow');</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>015</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>016</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツのIDを取得</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>017</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var modal = '#' + $(this).attr('data-target');</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>018</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツの表示位置を設定</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>019</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">modalResize();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>020</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツフェードイン</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>021</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(modal).fadeIn('slow');</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>022</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>023</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// 「.modal-overlay」あるいは「.modal-close」をクリック</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>024</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('.modal-overlay, .modal-close').off().click(function(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>025</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツとオーバーレイをフェードアウト</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>026</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(modal).fadeOut('slow');</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>027</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('.modal-overlay').fadeOut('slow',function(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>028</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// オーバーレイを削除</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>029</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$('.modal-overlay').remove();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>030</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>031</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>032</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>033</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// リサイズしたら表示位置を再取得</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>034</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(window).on('resize', function(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>035</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">modalResize();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>036</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>037</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>038</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツの表示位置を設定する関数</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>039</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">function modalResize(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>040</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// ウィンドウの横幅、高さを取得</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>041</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var w = $(window).width();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>042</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var h = $(window).height();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>043</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>044</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツの表示位置を取得</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>045</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var x = (w - $(modal).outerWidth(true)) / 2;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>046</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var y = (h - $(modal).outerHeight(true)) / 2;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>047</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>048</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// モーダルコンテンツの表示位置を設定</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>049</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(modal).css({'left': x + 'px','top': y + 'px'});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>050</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>051</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>052</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>053</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>054</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>055</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>056</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">style</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>057</code></td><td class="content"><code class="plain">.modal-content {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>058</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">position:fixed;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>059</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">display:none;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>060</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">z-index:2;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>061</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">width:50%;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>062</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">margin:0;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>063</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">padding:10px 20px;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>064</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">border:2px solid #aaa;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>065</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">background:#fff;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>066</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>067</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>068</code></td><td class="content"><code class="plain">.modal-content p {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>069</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">margin:0;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>070</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">padding:0;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>071</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>072</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>073</code></td><td class="content"><code class="plain">.modal-overlay {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>074</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">z-index:1;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>075</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">display:none;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>076</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">position:fixed;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>077</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">top:0;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>078</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">left:0;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>079</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">width:100%;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>080</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">height:120%;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>081</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">background-color:rgba(0,0,0,0.75);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>082</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>083</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>084</code></td><td class="content"><code class="plain">.modal-open {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>085</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">color:#00f;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>086</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">text-decoration:underline;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>087</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>088</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>089</code></td><td class="content"><code class="plain">.modal-open:hover {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>090</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cursor:pointer;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>091</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">color:#f00;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>092</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>093</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>094</code></td><td class="content"><code class="plain">.modal-close {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>095</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">color:#00f;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>096</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">text-decoration:underline;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>097</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>098</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>099</code></td><td class="content"><code class="plain">.modal-close:hover {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>100</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cursor:pointer;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>101</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">color:#f00;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>102</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>103</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">style</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>104</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">head</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>105</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">body</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>106</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">data-target</code><code class="plain">=</code><code class="string">"con1"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-open"</code><code class="plain">&gt;リンク1&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>107</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">data-target</code><code class="plain">=</code><code class="string">"con2"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-open"</code><code class="plain">&gt;リンク2&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>108</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">data-target</code><code class="plain">=</code><code class="string">"con3"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-open"</code><code class="plain">&gt;リンク3&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>109</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">data-target</code><code class="plain">=</code><code class="string">"con4"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-open"</code><code class="plain">&gt;リンク4&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>110</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">data-target</code><code class="plain">=</code><code class="string">"con5"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-open"</code><code class="plain">&gt;リンク5&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>111</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>112</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"con1"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-content"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>113</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;リンク1の内容です。&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>114</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-close"</code><code class="plain">&gt;閉じる&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>115</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>116</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"con2"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-content"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>117</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。リンク2の内容です。&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>118</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-close"</code><code class="plain">&gt;閉じる&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>119</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>120</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"con3"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-content"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>121</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。リンク3の内容です。&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>122</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-close"</code><code class="plain">&gt;閉じる&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>123</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>124</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"con4"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-content"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>125</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;リンク4の内容です。リンク4の内容です。&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>126</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-close"</code><code class="plain">&gt;閉じる&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>127</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>128</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"con5"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-content"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>129</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。リンク5の内容です。&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>130</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"modal-close"</code><code class="plain">&gt;閉じる&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>131</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>132</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>133</code></td><td class="content"><code class="plain">スクロールしてみてください。モーダルウィンドウは固定されているのがわかるかと思います。&lt;</code><code class="keyword">br</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>134</code></td><td class="content"><code class="plain">↓&lt;</code><code class="keyword">br</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>135</code></td><td class="content"><code class="plain">・・・</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>136</code></td><td class="content"><code class="plain">終わり。</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>137</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>138</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"http://coolwebwindow.com/jquery-lab/archives/304"</code><code class="plain">&gt;&amp;lt;&amp;lt; 記事に戻る&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>139</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">body</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>140</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">html</code><code class="plain">&gt;</code></td></tr></tbody></table></div></div></div>
+<p>
+簡単に説明すると、リンクしたいテキストをアンカーで囲み（別にaタグでなくてもよいのですが、そのほうが意味的には通っているので）、「data-target」という新しい属性を作っています。これは元々ある属性ではなくて自分で勝手に作った属性になります。この属性に任意の文字列を与えます。「con1」とか「con2」とかです。
+</p>
+<p>
+モーダルウィンドウで表示したいコンテンツをdiv要素で囲み、div要素に先ほど指定したdata-targetの値（文字列）をclass名にして指定します。
+</p>
+<p>
+少し補足すると、この「data-target」というのは、「カスタムデータ属性（独自データ属性）」といい、HTML5から実装された定義です。名前の付け方も決まっており、「data-」から始める文字列で、その後の文字列の付け方も決まっています。以下のブログの記事では詳しく説明されているのでご参考ください。
+</p>
+<ul class="link">
+<li><a href="http://dresscording.com/blog/html5/custom_data_attribute.html">HTML5 カスタムデータ属性「data-*」にJavaScript、jQueryからアクセスする方法 | Dress Cording</a></li>
+</ul>
+<p>
+jQueryの部分はソースコードを見てもらえばわかるかと思いますが、ちょっと引っかかったところは、オーバーレイのコンテンツを非表示にする箇所（27行目～）です。
+</p>
+<p>
+フェードアウトした後に、「.remove()」を使って、オーバーレイのdiv要素（&lt;div class=”modal-overlay”&gt;&lt;/div&gt;）を削除しないと、モーダルウィンドウを表示する度に、オーバーレイのレイヤーが重なってしまいます。あと、フェードアウトした後に削除しないといけないので、コールバック関数を使います。
+</p>
+<p>
+あと、<a href="http://syncer.jp/jquery-modal-window">Syncer</a>様のサイトでもそうでしたが、、その前にクリックした分のイベントハンドラが残っているらしく、24行目で「$(‘.modal-overlay, .modal-close’).off().click(function(){～」というように「.off()」を入れないと動作がおかしくなりました。これはバグなのでしょうか…。よくわかりませんでした。
+</p>
+<p>
+このモーダルウィンドウは反対に、スクロールバーの出るモーダルウィンドウを作ってみました。是非、ご参考ください。
+</p>
+<ul class="link">
+<li><a href="http://coolwebwindow.com/jquery-lab/archives/352">jQueryでスクロールバーの出るモーダルウィンドウを作る方法 | jQuery.lab</a></li>
+</ul>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		カテゴリー: <a href="https://www.coolwebwindow.com/jquery-lab/archives/category/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" title="プログラミング の投稿をすべて表示" rel="category tag">プログラミング</a> &nbsp; 作成者: <a href="https://www.coolwebwindow.com/jquery-lab/archives/author/admin">admin</a> <a href="https://www.coolwebwindow.com/jquery-lab/archives/304" title="jQueryでモーダルウィンドウを作る方法 へのパーマリンク" rel="bookmark">パーマリンク</a>		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-304 -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+
+			<aside id="calendar-2" class="widget widget_calendar"><h3 class="widget-title">&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>2019年6月</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="月曜日">月</th>
+		<th scope="col" title="火曜日">火</th>
+		<th scope="col" title="水曜日">水</th>
+		<th scope="col" title="木曜日">木</th>
+		<th scope="col" title="金曜日">金</th>
+		<th scope="col" title="土曜日">土</th>
+		<th scope="col" title="日曜日">日</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2016/05" title="2016年5月の投稿を表示">« 5月</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	</tbody>
+	</table></div></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">最近の投稿</h3>		<ul>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/556" title="jQueryで特定の属性を持つセレクタの書き方の備忘録">jQueryで特定の属性を持つセレクタの書き方の備忘録</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/547" title="固定したヘッダーナビゲーションの表示方法">固定したヘッダーナビゲーションの表示方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/541" title="jQueryを記述する際に、クリックの動作とホバーの動作をうまく制御する方法">jQueryを記述する際に、クリックの動作とホバーの動作をうまく制御する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/539" title="リサイズが完了したタイミングでjQueryコードを実行する方法">リサイズが完了したタイミングでjQueryコードを実行する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/528" title="jQueryで静的HTMLファイルをページネーション（ページ分割）する方法">jQueryで静的HTMLファイルをページネーション（ページ分割）する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/514" title="bxsliderを使って、カルーセルタイプのスライドを画面いっぱいに並べる方法">bxsliderを使って、カルーセルタイプのスライドを画面いっぱいに並べる方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/494" title="jQueryで別ページからリンク先のアコーディオンメニューを開く方法">jQueryで別ページからリンク先のアコーディオンメニューを開く方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/486" title="jQueryでモーダルウィンドウ自体にスクロールバーを出す方法">jQueryでモーダルウィンドウ自体にスクロールバーを出す方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/481" title="jQueryで小窓（ポップアップウィンドウ）を出す方法">jQueryで小窓（ポップアップウィンドウ）を出す方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/473" title="jQueryで「続きを読む」「閉じる」ボタンの付いた開閉パネルの作り方">jQueryで「続きを読む」「閉じる」ボタンの付いた開閉パネルの作り方</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/467" title="jQueryでアニメーションなしにページのトップへ戻る方法">jQueryでアニメーションなしにページのトップへ戻る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/459" title="ナビゲーション付きのカルーセルパネルをjQueryで作る方法">ナビゲーション付きのカルーセルパネルをjQueryで作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/449" title="jQueryでテキストメニュー付きのスライドショーを作る方法">jQueryでテキストメニュー付きのスライドショーを作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/435" title="シンプルなサムネイル付きスライドショーをjQueryで作る">シンプルなサムネイル付きスライドショーをjQueryで作る</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/428" title="複数トリガーで動作するアコーディオンメニューをjQueryで実装する方法">複数トリガーで動作するアコーディオンメニューをjQueryで実装する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/422" title="jQueryでシンプルなアコーディオンメニューを作る方法">jQueryでシンプルなアコーディオンメニューを作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/406" title="jQueryでランダムに画像などコンテンツ要素をフェードインさせる方法">jQueryでランダムに画像などコンテンツ要素をフェードインさせる方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/398" title="シンプルなタブパネルをjQueryで作る方法">シンプルなタブパネルをjQueryで作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/392" title="dl定義リストを利用してタブパネルをjQueryで作る方法">dl定義リストを利用してタブパネルをjQueryで作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/386" title="jQueryで画像の説明文をフェードインして表示する方法">jQueryで画像の説明文をフェードインして表示する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/383" title="jQueryで画像の説明文をスライドアップして表示する方法">jQueryで画像の説明文をスライドアップして表示する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/361" title="ウィンドウのスクロールバーの横幅を計算するjQueryコード">ウィンドウのスクロールバーの横幅を計算するjQueryコード</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/352" title="jQueryでスクロールバーの出るモーダルウィンドウを作る方法">jQueryでスクロールバーの出るモーダルウィンドウを作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/319" title="画像をふんわりフェードしながら表示させるjQueryプラグイン">画像をふんわりフェードしながら表示させるjQueryプラグイン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/314" title="1行テキストをフェードインしながら切り替えるjQueryスクリプト">1行テキストをフェードインしながら切り替えるjQueryスクリプト</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/304" title="jQueryでモーダルウィンドウを作る方法">jQueryでモーダルウィンドウを作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/292" title="jQueryで画像をランダムに表示する方法">jQueryで画像をランダムに表示する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/280" title="背景画像（backgroung-image）のスライドショーをjQueryで作る方法">背景画像（backgroung-image）のスライドショーをjQueryで作る方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/272" title="jQueryの基本">jQueryの基本</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/259" title="スクロールイベントに重宝する『jQuery Waypoints』プラグイン">スクロールイベントに重宝する『jQuery Waypoints』プラグイン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/255" title="jQueryで同一ページで複数の画像ギャラリーを表示する">jQueryで同一ページで複数の画像ギャラリーを表示する</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/251" title="下部までスクロールすると右下に配置したコンテンツが開くjQuery">下部までスクロールすると右下に配置したコンテンツが開くjQuery</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/247" title="一番下までスクロールするとコンテンツが横からスライドして表示するjQuery">一番下までスクロールするとコンテンツが横からスライドして表示するjQuery</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/239" title="スクロールしたらヘッダーにメニューを固定表示するjQuery">スクロールしたらヘッダーにメニューを固定表示するjQuery</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/234" title="スクロールしたら「トップへ戻るボタン」を表示するjQuery">スクロールしたら「トップへ戻るボタン」を表示するjQuery</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/230" title="マウスオーバーでアニメーションするボタン（その2）">マウスオーバーでアニメーションするボタン（その2）</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/223" title="マウスオーバーでアニメーションするボタン">マウスオーバーでアニメーションするボタン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/216" title="スクロールした時にサイドバーを固定位置に配置する">スクロールした時にサイドバーを固定位置に配置する</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/209" title="アコーディオンメニューその2">アコーディオンメニューその2</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/202" title="超簡単！シンプルなアコーディオンメニュー">超簡単！シンプルなアコーディオンメニュー</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/177" title="人様の書いたjQueryコードを読み解く">人様の書いたjQueryコードを読み解く</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/171" title="jQueryでウィンドウ幅に合わせてサイズが可変するスライドショー">jQueryでウィンドウ幅に合わせてサイズが可変するスライドショー</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/167" title="jQueryで日付を取得する際に桁を揃える方法">jQueryで日付を取得する際に桁を揃える方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/163" title="jQueryのチートシート">jQueryのチートシート</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/139" title="特定の時間周期で画像を切り替えるjQueryスクリプト">特定の時間周期で画像を切り替えるjQueryスクリプト</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/133" title="jQueryを利用してスクロールするとページの戻るリンクを表示させる">jQueryを利用してスクロールするとページの戻るリンクを表示させる</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/128" title="jQueryを初めて学ぶ人に見て欲しいプレゼンスライド">jQueryを初めて学ぶ人に見て欲しいプレゼンスライド</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/114" title="jquery.cookie.jsを利用して文字サイズを変更する">jquery.cookie.jsを利用して文字サイズを変更する</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/99" title="jQueryでメニュー画像のロールオーバーと、現在ページのメニュー画像をハイライトする">jQueryでメニュー画像のロールオーバーと、現在ページのメニュー画像をハイライトする</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/93" title="jQueryのリファレンスサイト">jQueryのリファレンスサイト</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/90" title="jQueryで画像を次々にフェードインさせながら表示する方法">jQueryで画像を次々にフェードインさせながら表示する方法</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/82" title="jQueryを利用して、リンク先を別ウィンドウで開く">jQueryを利用して、リンク先を別ウィンドウで開く</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/79" title="サイドバーがスクロールに合わせて移動するjQueryプラグインその2">サイドバーがスクロールに合わせて移動するjQueryプラグインその2</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/74" title="サイドバーがスクロールに合わせて移動するjQueryプラグイン">サイドバーがスクロールに合わせて移動するjQueryプラグイン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/66" title="現在のページのメニュー画像をハイライトする">現在のページのメニュー画像をハイライトする</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/61" title="ドットインストールでjQueryを学ぶ">ドットインストールでjQueryを学ぶ</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/50" title="スライドショーを設置するjQueryプラグイン">スライドショーを設置するjQueryプラグイン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/33" title="テーブルセルをストライプに色付け">テーブルセルをストライプに色付け</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/16" title="高さの違うコンテンツを隙間なく配置するjQueryプラグイン">高さの違うコンテンツを隙間なく配置するjQueryプラグイン</a></li>
+				<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/1" title="jQueryを学ぶ上で役に立つサイト">jQueryを学ぶ上で役に立つサイト</a></li>
+				</ul>
+		</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">アーカイブ</h3>		<ul>
+			<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2016/05" title="2016年5月">2016年5月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/09" title="2015年9月">2015年9月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/08" title="2015年8月">2015年8月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/06" title="2015年6月">2015年6月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/04" title="2015年4月">2015年4月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/02" title="2015年2月">2015年2月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2015/01" title="2015年1月">2015年1月</a>&nbsp;(10)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2014/12" title="2014年12月">2014年12月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2014/08" title="2014年8月">2014年8月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2014/07" title="2014年7月">2014年7月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2014/05" title="2014年5月">2014年5月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2014/01" title="2014年1月">2014年1月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/12" title="2013年12月">2013年12月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/10" title="2013年10月">2013年10月</a>&nbsp;(4)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/09" title="2013年9月">2013年9月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/08" title="2013年8月">2013年8月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/05" title="2013年5月">2013年5月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/02" title="2013年2月">2013年2月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2013/01" title="2013年1月">2013年1月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2012/09" title="2012年9月">2012年9月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2012/08" title="2012年8月">2012年8月</a>&nbsp;(1)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2012/07" title="2012年7月">2012年7月</a>&nbsp;(3)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2012/06" title="2012年6月">2012年6月</a>&nbsp;(2)</li>
+	<li><a href="https://www.coolwebwindow.com/jquery-lab/archives/date/2012/05" title="2012年5月">2012年5月</a>&nbsp;(6)</li>
+		</ul>
+</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">カテゴリー</h3>		<ul>
+	<li class="cat-item cat-item-3"><a href="https://www.coolwebwindow.com/jquery-lab/archives/category/%e3%83%96%e3%83%83%e3%82%af%e3%83%9e%e3%83%bc%e3%82%af" title="ブックマーク に含まれる投稿をすべて表示">ブックマーク</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.coolwebwindow.com/jquery-lab/archives/category/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" title="プログラミング に含まれる投稿をすべて表示">プログラミング</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.coolwebwindow.com/jquery-lab/archives/category/%e5%8b%89%e5%bc%b7" title="勉強 に含まれる投稿をすべて表示">勉強</a>
+</li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text"><h3 class="widget-title">プロフィール</h3>			<div class="textwidget"><p>vanilla<br>
+<a href="http://www.coolwebwindow.com/">CoolWebWIndow</a>というCSSテンプレート配布サイトなども運営しています。<br>
+当サイトについてご質問等がありましたら、info@coolwebwindow.com までご連絡ください。</p>
+</div>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+								<a href="http://ja.wordpress.org/" title="セマンティックなパブリッシングツール" rel="generator">Proudly powered by WordPress</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/shCore.js"></script>
+<script type="text/javascript" src="./jQueryでモーダルウィンドウを作る方法 _ jQuery.lab_files/shBrushXml.js"></script>
+<script type="text/javascript">//<![CDATA[
+SyntaxHighlighter.config.strings.expandSource="+ ソースを表示";SyntaxHighlighter.config.strings.viewSource="プレインテキスト";SyntaxHighlighter.config.strings.copyToClipboard="クリップボードにコピー";SyntaxHighlighter.config.strings.copyToClipboardConfirmation="クリップボードにコピーされました";SyntaxHighlighter.config.strings.print="印刷";SyntaxHighlighter.config.strings.help="?";SyntaxHighlighter.config.strings.noBrush="Can't find brush for: ";SyntaxHighlighter.config.strings.brushNotHtmlScript="Brush wasn't made for html-script option: ";SyntaxHighlighter.config.clipboardSwf="https://www.coolwebwindow.com/jquery-lab/wp-content/plugins/syntax-highlighter/2.1.364/js/clipboard.swf";
+SyntaxHighlighter.all();
+//]]></script>
+
+
+</body></html>
