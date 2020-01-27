@@ -465,9 +465,8 @@ h3{
 	.profile{
 		display: block;
 	}
-	.prof_img{
-	margin-right: 0;
-	text-align: center;
+	.prof_img img{
+		width: 100%;
 	}
 }
 
