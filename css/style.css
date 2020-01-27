@@ -465,6 +465,10 @@ h3{
 	.profile{
 		display: block;
 	}
+	.prof_img{
+	margin-right: 0;
+	text-align: center;
+	}
 }
 
 @media only screen and (max-width: 1199px){
