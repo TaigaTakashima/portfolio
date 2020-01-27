@@ -1,130 +1,95 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>CSS3 Flexbox　レイアウトテスト</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-    </head>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="最新技術と自然との調和を目指す">
+<meta name="viewport" content="width=device-width">
+<title>SAMPLE COMPANY | 最新技術と自然との調和を目指す</title>
+<link rel="stylesheet" media="all" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</head>
 
-    <body>
-        <div id="wrapper">
-            <header>
-                <div class="inner clearfix">
-                    <h1>
-                        <a href="#"
-                            ><img src="images/logo_other.png" alt=""
-                        /></a>
-                    </h1>
-                    <div id="nav_toggle">
-                        <div>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#">MENU1</a></li>
-                            <li><a href="#">MENU2</a></li>
-                            <li><a href="#">MENU3</a></li>
-                            <li><a href="#">MENU4</a></li>
-                            <li><a href="#">MENU5</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+<body>
 
-            <div id="contents">
-                <div class="item">
-                    <h2>ピザハット･シュプリーム</h2>
-                    <p><img src="images/piza_1.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\2,380 L\3,500
-                        定番のミックスピザ。ペパロニサラミは定番のトッピング！(ペパロニサラミ/オニオン/ピーマン/マッシュルーム/イタリアンソーセージ。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-                <div class="item">
-                    <h2>ベジ･シュプリーム</h2>
-                    <p><img src="images/piza_2.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\2,380 L\3,500 税抜 M\2,380 L\3,500
-                        たっぷりの野菜にブラックオリーブも組み合わせたヘルシー＆ライトなおいしさが味わえる1枚です。(オニオン/ピーマン/マッシュルーム。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-                <div class="item">
-                    <h2>もちポテ明太</h2>
-                    <p><img src="images/piza_3.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\2,260 L\3,380
-                        おもちとポテトをまろやかな明太子クリームソースで味わう和風ピザ。(もち/ポテト/ベーコン/オニオン/コーン/別添きざみ海苔。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-                <div class="item">
-                    <h2>ジェノベーゼ</h2>
-                    <p><img src="images/piza_4.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\2,260 L\3,380
-                        生クリームを加えたバジルの香り豊かなジェノベーゼソースと、まろやかでクセのないフレッシュモッツァレラの香りと濃厚チーズの組み合わせが大人向けの商品。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-                <div class="item">
-                    <h2>ハワイアン</h2>
-                    <p><img src="images/piza_5.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\2,000 L\3,130
-                        パイナップルのフルーティーな甘みとベーコンの程よい塩味がバランスよくまとまった商品です。(パイナップル/ベーコン/コーン/オニオン。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-                <div class="item">
-                    <h2>デラックス</h2>
-                    <p><img src="images/piza_6.jpg" alt="" /></p>
-                    <p>
-                        税抜 M\1,880 L\3,000
-                        「ピザ」と言えばこちら！ミートと野菜がトマトソースにぴったり。バランスのとれた定番のおいしさ。(ペパロニサラミ/ベーコン/ピーマン。
-                    </p>
-                    <p><a href="">注文に進む</a></p>
-                </div>
-            </div>
-            <!--contents-->
+<nav id="mainnav">
+	<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+	<div class="panel">
+		<ul>
+			<li><a href="#header">TOP</a></li>
+			<li><a href="#sec01">PROFILE</a></li>
+			<li><a href="#sec02">WORKS</a></li>
+		</ul>
+	</div>
+</nav>
 
-            <div id="footNavi">
-                <ul>
-                    <li>メニューを見る</li>
-                    <li><a href="">ピザ</a></li>
-                    <li><a href="">セット</a></li>
-                    <li><a href="">パスタ</a></li>
-                </ul>
-                <ul>
-                    <li>お客様サポート</li>
-                    <li><a href="">ご利用にあたって</a></li>
-                    <li><a href="">ご注文方法</a></li>
-                    <li><a href="">よくある質問</a></li>
-                </ul>
-            </div>
-            <!--footNavi-->
-            <div id="footer">
-                <p>copyright WB CSS3 Flexbox Leyout TEST</p>
-            </div>
-            <!--footer-->
-        </div>
-        <!--wrapper-->
+<header id="header">
+	<img src="images/mainImg.jpg" alt="">
+	<div id="slogan">
+		<h1>Taiga Takashima</h1>
+		<h3>WEBの勉強をする学生のWEBサイトです。</h3>
+	</div>
+</header>
 
-        <!--ハンバーガーメニュー-->
-        <script src="js/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                //alert("test")
-                $("#nav_toggle").click(function() {
-                    $("header").toggleClass("open");
-                    $("nav").slideToggle(500);
-                });
-            });
-        </script>
-    </body>
+<!-- PROFILE -->
+<section id="sec01">
+	<header>
+		<h2>PROFILE</h2>
+	</header>
+	<div class="profile">
+		<div>
+			<p class="prof_img">
+				<img src="images/profile.jpg" alt="">
+			</p>
+		</div>
+
+		<div class="prof_txt">
+			<p>HAL大阪IT学部WEB学科</p>
+			<h3>高島 大河</h3>
+			<p>
+				1998年10月12日 大阪市生まれ。<br>
+				さんぷるてきすと
+				自己紹介入れる
+			</p>
+		</div>
+
+	</div>
+</section>
+<!-- // PROFILE -->
+
+<!-- STORY -->
+<section id="sec02">
+	<h2>WORKS</h2>
+	<div class="inner">
+		<ul class="col2">
+			<li>
+				<h3>ゴールデンウィークの日記</h3>
+				<p><img src="images/kadai01.jpg" alt=""></p>
+				<p>科学的研究というのが近代史学の学問的方法によるちかごろ世間で日本歴史の科学的研究ということがしきりに叫ばれている。研究という意義であるならば、研究という意義であるならばこれは史学の学徒の間においては一般に行われていることであるから、今さらこと新しくいうには及ばないはずである。</p>
+			</li>
+			<li>
+				<h3>映画の特設サイト</h3>
+				<p><img src="images/kadai02.jpg" alt=""></p>
+				<p>ちかごろ世間で日本歴史の科学的研究ということがしきりに叫ばれているということがしきりに叫ばれている。科学的研究というのが近代史学の学問的方法による研究という意義であるならば、これは史学の学徒の間においては一般に行われていることであるから、今さらこと新しくいうには及ばないはずである。</p>
+			</li>
+			<li>
+				<h3>アーティストサイト</h3>
+				<p><img src="images/kadai04.jpg" alt=""></p>
+				<p>ちかごろ世間で日本歴史の科学的研究ということがしきりに叫ばれているということがしきりに叫ばれている。科学的研究というのが近代史学の学問的方法による研究という意義であるならば、これは史学の学徒の間においては一般に行われていることであるから、今さらこと新しくいうには及ばないはずである。</p>
+			</li>
+			<li>
+				<h3>アーティストのリニューアル</h3>
+				<p><img src="images/kadai05.jpg" alt=""></p>
+				<p>ちかごろ世間で日本歴史の科学的研究ということがしきりに叫ばれているということがしきりに叫ばれている。科学的研究というのが近代史学の学問的方法による研究という意義であるならば、これは史学の学徒の間においては一般に行われていることであるから、今さらこと新しくいうには及ばないはずである。</p>
+			</li>
+		</ul>
+	</div>
+</section>
+<!-- // STORY -->
+
+<footer id="footer">
+	Copyright(c) 20XX Sample Inc. All Rights Reserved. Design by
+</footer>
+
+</body>
 </html>
