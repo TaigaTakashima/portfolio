@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+h1 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#gnav {
+    height: 60px;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+#gnav li {
+    list-style: none;
+    display: inline;
+    margin: 0 0 0 50px;
+    line-height: 60px;
+}
+
+#gnav li a {
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+#gnav li a:hover {
+    color: #c99509;
+    text-decoration: underline;
+}
+
+.mainvisual{
+    margin-bottom: 50px;
+}
+
+.dotstyle_title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    height: 50px;
+    margin: 20px 0;
+    line-height: 50px;
+    border-bottom: 2px solid #c99509;
+    padding: 0 0 0 10px;
+}
+
+.text_box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.text_box a {
+    color: #442220;
+}
+
+.text_box a:hover {
+    text-decoration: none;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+/* メニュー */
+
+.menu_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.menu{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+}
+.menu_ul{
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5em;
+}
+
+.menu_detail{
+    position: relative;
+    margin-left: 20px;
+    width: 580px;
+}
+
+.menu_title{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.menu_ruby{
+    font-size: 0.8em;
+    color: #696969;
+    text-align: center;
+}
+
+/* ボタンのスタイル */
+button{
+    position: absolute;
+    background-color: #c99509;
+    border: none;
+    color: #f8f8f8;
+    font-size: 18px;
+    bottom: 0px;
+    right: 20px;
+    height: 40px;
+    padding: 0 30px;
+}
+button:hover{
+    background-color: #f8f8f8;
+    color: #c99509;
+    border: 1px solid #c99509;
+    cursor: pointer;
+}
+
+/* ギャラリー */
+.top_gallery{
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.top_gallery_box{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 25px 75px 25px;
+}
+
+/* フッター */
+
+.footer {
+    border-top: #c99509 2px solid;
+    padding: 25px;
+}
+#footer_box{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#footer_address{
+    margin-left: 20px;
+    line-height: 1.2em;
+}
+#copy{
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* aboutページ */
+.title{
+    margin-bottom: 50px;
+}
+
+.about_txt_box{
+    text-align: center;
+}
+
+.gold_txt{
+    font-size: 18px;
+    color: #c99509;
+    line-height: 2em;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+.about_txt{
+    width: 700px;
+    margin: 0 auto 100px;
+}
+
+.about_txt p{
+    text-align: left;
+    line-height: 2em;
+    padding: 0 0 25px;
+}
+
+.shop_info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.shop_info ul{
+    padding: 25px;
+}
+
+.shop_info li{
+    margin-bottom: 20px;
+}
+
+.photo_box{
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+.gallery_photo{
+    width: 33%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.staff_box{
+    margin-bottom: 30px;
+}
+.staff_box p{
+    margin-top: 20px;
+    text-align: center;
+}
+.staff_box span{
+    font-size: 12px;
+    color: #919191;
+}
+.staff{
+    width: 33%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.staff_box::after{
+    content:"";
+    display: block;
+    width:33%;
+}

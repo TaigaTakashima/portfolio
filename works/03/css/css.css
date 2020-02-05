@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*========デフォルトスタイルの初期化========*/
+
+/*CSS作業のワークフロー
+１）デフォルトスタイルの初期化
+２）構造の横幅の設定
+３）左右に並べる（float）
+４）回り込みの解除（clear）
+５）構造同士の上下・左右の間隔設定（margin）
+６）単一構造への余白設定（padding）
+７）詳細デザイン
+*/
+/*======================================*/
+/*======初期化======*/
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+div{
+	box-sizing: border-box;
+}
+li{
+	list-style-type: none;
+	list-style-position: outside;
+}
+a{
+	text-decoration: none;
+}
+h1{
+	font-size: 0em;
+}
+h2{
+	font-size: 1em;
+}
+p {
+	font-size: 0.78em;
+}
+dl{
+	font-size: 0.75em;
+}
+
+
+/*=====各エリアの横幅設定=====*/
+/*オススメ:エリアの背景色設定*/
+#wrapper{
+	/*background-color: gray;*/
+    width: 960px;
+    margin: 0 auto;
+}
+#logo{
+    /*background-color: blueviolet;*/
+    padding: 10px 0;
+}
+#header{
+    /*background-color:orange;*/
+    margin-bottom: 20px;
+}
+#concept{
+	/*background-color: olive;*/
+	width:400px;
+    float: left;
+    margin-right: 40px;
+}
+#project{
+	/*background-color: skyblue;*/
+	width: 520px;
+    float: left;
+    margin-bottom: 20px;
+}
+#staff{
+    background-color: #eaeaea;
+    clear: both;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#leftstaff{
+	/*background-color: gold;*/
+	width:230px;
+    float:left;
+    padding: 0px 15px 15px;
+}
+#rightstaff{
+	/*background-color: silver;*/
+	width:730px;
+    float:left;
+    padding: 0px 15px 15px;
+}
+#footer{
+	/*background-color: green; */
+    clear:both;
+    border-top: solid #b3b3b3 1px;
+    text-align: center;
+    color: #b3b3b3;
+    padding: 15px;
+}
+
+/*=====ナビゲーション=====*/
+#navi a{
+	background-color:#043279;
+	color:white;
+	display:block;
+	width:160px;
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 40px;
+}
+#navi li{
+    float:left;
+}
+
+/*====特定個所のスタイル制御====*/
+/*====制作スタッフのスタイル====*/
+dl{
+    font-size: 12px;
+}
+dt{
+    float: left;
+    margin-right: 10px;
+    color:#043279;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 2px 0px;
+}
+dd{
+    padding: 2px 0px;
+}
+#staff h2{
+    color: #043279;
+    padding: 15px 15px;
+}
+/*====段落のスタイル====*/
+p{
+    padding: 10px 0px;
+    font-size: 13px;
+}
+/*====強調箇所のカラー変更====*/
+.fontcolor{
+    color: #c22f0e;
+}
+/*====タイトルのスタイル=====*/
+.ttl{
+    border: solid #043279 1px;
+    border-left: solid #043279 5px;
+    color: #043279;
+    padding: 10px;
+}
