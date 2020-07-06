@@ -281,7 +281,7 @@ h4 {
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 .col2 img {
@@ -289,6 +289,9 @@ h4 {
     display: block;
     border: #9b9b9b solid 1px;
     margin-bottom: 20px;
+}
+.col2 iframe{
+    width: 100%;
 }
 .col2 li{
     margin: 40px 0;
