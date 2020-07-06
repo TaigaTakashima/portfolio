@@ -111,7 +111,7 @@ input:focus {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 568px;
+    height: 600px;
 }
 
 #header img {
@@ -134,8 +134,8 @@ input:focus {
 }
 
 #slogan h1 {
-    font-size: 40px;
-    font-family: "Pacifico", cursive;
+    font-size: 70px;
+    font-family: "futura";
     margin-bottom: 20px;
     font-weight: normal;
 }
@@ -145,6 +145,56 @@ input:focus {
     font-weight: normal;
 }
 
+/*スクロールボタン*/
+#scroll{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	text-decoration: none;
+	padding-top: 60px;
+	color: white;
+}
+#scroll span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: sdb 2s infinite;
+	animation: sdb 2s infinite;
+	box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+	0% {
+	-webkit-transform: rotate(-45deg) translate(0, 0);
+	}
+	20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+	}
+	40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+	}
+}
+@keyframes sdb {
+	0% {
+    transform: rotate(-45deg) translate(0, 0);
+	}
+	20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+	}
+	40% {
+    transform: rotate(-45deg) translate(0, 0);
+	}
+}
 /* フッター
 ------------------------------------------------------------*/
 #footer {
@@ -157,7 +207,7 @@ input:focus {
 /* 共通
 ------------------------------------------------------------*/
 h1,
-h2 {
+h2,h3 {
     font-family: "Josefin Sans", "Noto Sans JP", serif;
 }
 
@@ -194,12 +244,6 @@ h4 {
     padding-bottom: 50px;
 }
 
-.col2 li {
-    display: inline-block;
-    width: 100%;
-    margin: 20px 0 20px 0;
-}
-
 /* SEC01 Profile
 ------------------------------------------------------------*/
 
@@ -223,13 +267,8 @@ h4 {
     text-align: center;
 }
 
-/* SEC02 MESSAGE
+/* SEC02 WORKS
 ------------------------------------------------------------*/
-.wrap {
-    clear: both;
-    width: 100%;
-    background: #f6f6f6;
-}
 
 .bg {
     line-height: 0;
@@ -239,7 +278,11 @@ h4 {
     padding: 0 0 20px !important;
 }
 .col2{
-	margin-bottom: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
 }
 .col2 img {
     max-width: 100%;
@@ -247,17 +290,21 @@ h4 {
     border: #9b9b9b solid 1px;
     margin-bottom: 20px;
 }
-
+.col2 li{
+    margin: 40px 0;
+}
 /* RESPONSIVE 設定
 ------------------------------------------------------------*/
 
 @media only screen and (min-width: 1200px) {
     .inner {
-        width: 1024px;
+        width: 80%;
         padding-bottom: 120px;
+        margin: 0 auto;
     }
     section h2 {
-        padding: 70px 0 20px;
+        padding: 60px 0 60px;
+        font-size: 1.8em;
     }
     .txt h2 {
         padding: 0 0 20px !important;
@@ -309,47 +356,10 @@ h4 {
         padding: 20px 10px;
     }
 
-    /* SEC02 MESSAGE
+    /* SEC02 WORKS
 	-----------------*/
-    .txt,
-    .bg {
-        width: 50%;
-        float: left;
-        display: table;
-        background: #f6f6f6;
-    }
 
-    #sec02_02 .txt,
-    #sec02_02 .bg {
-        float: right;
-    }
 
-    .vMid {
-        display: table-cell;
-        padding: 0 100px;
-        vertical-align: middle;
-    }
-
-    /* SEC03 SERVICE MESSAGE STORY
-	-----------------*/
-    .col3 {
-        text-align: center;
-    }
-
-    .col3 li {
-        display: inline-block;
-        width: 30%;
-        padding: 0 1.5%;
-        margin-bottom: 0;
-        vertical-align: top;
-        text-align: left;
-    }
-
-    /* SEC05 PROFILE
-	-----------------*/
-    #sec05 {
-        padding-top: 120px;
-    }
 
     #footer {
         padding: 30px 10px 70px 0;
@@ -359,20 +369,23 @@ h4 {
 @media only screen and (min-width: 641px) {
     .col2 li {
         width: 40%;
-        padding: 0 3%;
         vertical-align: top;
+        margin: 40px 0;
     }
 }
 
 @media only screen and (max-width: 799px) {
     #slogan h1 {
-        font-size: 31px;
+        font-size: 40px;
     }
 
     #slogan h2 {
         font-size: 16px;
     }
 
+    #header{
+        height: 100vh;
+    }
     a#menu {
         display: inline-block;
         position: relative;
@@ -488,6 +501,12 @@ h4 {
     }
     .profile {
         display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .prof_img{
+        margin: 0;
+        margin-bottom: 30px;
     }
     .prof_img img {
         width: 100%;

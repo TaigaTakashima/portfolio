@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Selmer Paris Clarinet</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <link href="css/css.css" rel="stylesheet" type="text/css" />
+        <script>
+            (function(d) {
+                var config = {
+                    kitId: 'mnk1ljj',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+            $(function(){
+                // #で始まるアンカーをクリックした場合に処理
+                $('a[href^=#]').click(function() {
+                    // スクロールの速度
+                    var speed = 500; // ミリ秒
+                    // アンカーの値取得
+                    var href= $(this).attr("href");
+                    // 移動先を取得
+                    var target = $(href == "#" || href == "" ? 'html' : href);
+                    // 移動先を数値で取得
+                    var position = target.offset().top;
+                    // スムーススクロール
+                    $('body,html').animate({scrollTop:position}, speed, 'swing');
+                    return false;
+                });
+                $(window).scroll(function (){
+                    $('.fadein').each(function(){
+                        var elemPos = $(this).offset().top,
+                            scroll = $(window).scrollTop(),
+                            windowHeight = $(window).height();
+                        if (scroll > elemPos - windowHeight + 100){
+                            $(this).addClass('scrollin');
+                            }
+                        });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <div id="mainv">
+                <div id="mav">
+                    <h1>メインビジュアル</h1>
+                    <p class="cacth">
+                        SELMER PARIS<br>
+                        CLARINET
+                    </p>
+                </div>
+                <h1 id="logo">ロゴ</h1>
+            </div>
+            <a href="#contents" id="scroll"><span></span>Scroll</a>
+        </header>
+        <!-- //header -->
+
+        <!--contentns-->
+        <div id="contents">
+            <div id="about">
+                <div class="contents_wrap">
+                </div>
+                <h2 class="ban_mobile fadein"><img src="image/bana_about.png" alt="" /></h2>
+                <h2 class="ban_pc fadein"><img src="image/bana_about_pc.png" alt="" /></h2>
+                <div class="contents_wrap">
+                    <h3 class="fadein">パリから世界へ</h3>
+                    <p class="fadein">
+                        長いヨーロッパ音楽史の中から生まれ、天才作曲家モーツァルトによってその魅力が花開いた
+                        木管楽器、それがクラリネットです。
+                    </p>
+                    <p class="fadein">
+                        約4オクターブにも及ぶ音域の広さで、古典派、ロマン派、そして近現代の大作曲家たち
+                        を魅了し続けてきたクラリネットは、19世紀後半のパリで楽器としてのメカニズムを大きく前進さ
+                        せました。
+                    </p>
+                    <p class="fadein">
+                        その主役を務めたのが、セルマー・パリ社の礎を築いたHenri
+                        Selmerでした。Henriのクラリネットは、メカニズムの正確さと、なによりもまず豊かな音で、あっとい
+                        う間に世界を席巻し、そのスピリットを継承するセルマー・クラリネットは今日でも世界中のクラリネット奏者の心をとらえて放さないのです。
+                    </p>
+                    <p class="fadein">
+                        世界のプロが愛してやまないセルマー・パリ社のさまざまなクラリネットを、ぜひあなたご自身もご堪能ください。
+                    </p>
+                </div>
+            </div>
+            <div id="products" class="fadein">
+                <h2 class="ban_mobile"><img src="image/bana_products.png" alt="" /></h2>
+                <h2 class="ban_pc fadein"><img src="image/bana_products_pc.png" alt="" /></h2>
+                <div class="products_container">
+                    <div class="products_item">
+                        <h3 class="fadein"><img src="image/products_01.png" width="40px" /></h4>
+                        <h3 class="title fadein">Privilege</h4>
+                        <h4 class="fadein">プリヴィレッジ</h5>
+                        <p class="text fadein">
+                            クラリネットの宿命ともいわれてきたスロ
+                            ートトーンと最低音域の改善、そして人間工学に基づくキーデザインの変更、細部にもほどこされたエレガントなデザインに至るまで、あらゆる面での革新がなされました。
+                            「プリヴィレッジ」、それは機能性と優美さを兼ね備えた至宝のクラリネットです。
+                        </p>
+                    </div>
+                    <div class="products_item">
+                        <h3 class="fadein"><img src="image/products_02.png" width="40px" /></h4>
+                        <h3 class="title fadein">Presence</h4>
+                        <h4 class="fadein">プレザンス</h5>
+                        <p class="text fadein">
+                            セルマー・パリ社の最高級クラリネット「プリヴィレッジ」のDNAを受け継ぐ次世代クラリネットです。
+                            豊かな響き、正確なピッチ、エレガントで合理的なキーデザイン、すべての機能に革新的なアイディアが生かされています。
+                        </p>
+                    </div>
+                    <div class="products_item">
+                        <h3 class="fadein"><img src="image/products_04.png" width="40px" /></h4>
+                        <h3 class="title fadein">Recital</h4>
+                        <h4 class="fadein">レシタル</h5>
+                        <p class="text fadein">
+                            管体木部を肉厚にしたユニークな設計により、
+                            他に類を見ないビロードのようになめらかで
+                            豊かな音を生み出すことに成功しました。
+                            発売以来、長期にわたってヨーロッパのプロフェッショナル
+                            奏者たちに愛され続けています。
+                        </p>
+                    </div>
+                    <div class="products_item">
+                        <h3 class="fadein"><img src="image/products_03.png" width="40px" /></h4>
+                        <h3 class="title fadein">Prologue</h4>
+                        <h4 class="fadein">プロローグ</h5>
+                        <p class="text fadein">
+                            セルマー社の最高級クラリネット
+                            「プリヴィレッジ」と
+                            「プレザンス」のDNAを引き継ぐ最新機種
+                            「プロローグ」がついに誕生。
+                            同クラスでは考えられない豊かな響き、そしてスロート・トーンや最低音域のピッチとサウンドの良さにも驚嘆すべきものがあります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--//products-->
+
+            <div id="artist">
+                <h2 class="ban_mobile fadein"><img src="image/bana_artist.png" alt="" /></h2>
+                <h2 class="ban_pc fadein"><img src="image/bana_artist_pc.png" alt="" /></h2>
+                <div id="artist_wrap">
+                    <div class="artist_prof fadein">
+                        <p><img src="image/artist_philippe-berrod.jpg" alt=""></p>
+                        <p>
+                            フィリップ・ベロー<br>
+                            Philippe Berrod
+                        </p>
+                    </div>
+                    <div class="artist_prof fadein">
+                        <p><img src="image/artist_carbonare.jpg" alt=""></p>
+                        <p>
+                            アレッサンドロ・カルボナーレ<br>
+                            Alessandro Carbonare
+                        </p>
+                    </div>
+                    <div class="artist_prof fadein">
+                        <p><img src="image/artist_umemoto.jpg" alt=""></p>
+                        <p>
+                            梅本 貴子<br>
+                            Takako Umemoto
+                        </p>
+                    </div>
+                    <div class="artist_prof fadein">
+                        <p><img src="image/artist_kanai.jpg" alt=""></p>
+                        <p>
+                            金井 信之<br>
+                            Nobuyuki Kanai
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shop">
+                <h2 class="ban_mobile fadein"><img src="image/bana_shop.png" alt="" /></h2>
+                <h2 class="ban_pc fadein"><img src="image/bana_shop_pc.png" alt="" /></h2>
+                <div id="shop_container">
+                    <div id="shop_cont" class="fadein">
+                    <dl>
+                        <dt>総販売元</dt>
+                        <dd>株式会社ノナカ</dd>
+                        <dt>総輸入元</dt>
+                        <dd>野中貿易株式会社</dd>
+                    </dl>
+                    <p>
+                        神奈川県横浜市中区太田町4-46<br>
+                        TEL 045-211-2022／FAX045-212-1120<br>
+                        <a href="https://www.nonaka.com/" target="_blank">www.nonaka.com</a>
+                    </p>
+                    <ul id="attend">
+                        <li>
+                            お問い合わせは弊社WEBサイト「お問い合わせ&カタログ請求」よりご連絡ください
+                        </li>
+                        <li>
+                            仕様、付属品は予告なしに変更される場合がありますのでご了承ください。
+                        </li>
+                        <li>
+                            モデルによっては、納期を必要とする場合がありますのでご了承ください。
+                        </li>
+                    </ul>
+                    </div>
+                    <iframe class="fadein" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.276148365552!2d139.6349679152464!3d35.44795728024928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185cf6f946c22b%3A0xfb10e6aa56272993!2z44CSMjMxLTAwMTEg56We5aWI5bed55yM5qiq5rWc5biC5Lit5Yy65aSq55Sw55S677yU5LiB55uu77yU77yW!5e0!3m2!1sja!2sjp!4v1592557956618!5m2!1sja!2sjp" width="100%" height="450" frameborder="0" style="border:2px solid #b1982c;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--//contents-->
+
+        <!-- footer -->
+        <footer>
+            <p>2020&copy;Henri SELMER Paris</p>
+        </footer>
+        <!-- //footer -->
+    </body>
+</html>
