@@ -1,0 +1,233 @@
+@charset "utf-8";
+/*
+A-OTF Gothic BBB Pr6N
+font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+
+A-OTF Ryumin Pr6N
+font-family: a-otf-ryumin-pr6n, serif;
+*/
+/*スクロールでフェードイン*/
+	.fadein {
+	opacity: 0;
+	transform : translate(0, 50px);
+	transition : all 1500ms;
+	}
+
+	.fadein.scrollin{
+	opacity: 1;
+	transform: translate(0, 0);
+    }
+
+
+body{
+    background-color: #f7f4ed;
+    font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+}
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255 , 0.8);
+    width: 100%;
+    height: 70px;
+    z-index: 100;
+}
+header a:hover{
+    opacity: 0.5;
+}
+header h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 70px;
+    margin-left: 35px;
+}
+nav ul{
+    display: flex;
+    line-height: 70px;
+}
+nav ul li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0 16px;
+}
+#mainvisual{
+    position: relative;
+    margin-bottom: 70px;
+    width: 100%;
+    height: 100vh;
+}
+#mainvisual h1{
+    width: 100%;
+    height: 100vh;
+}
+#mainvisual img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#mainvisual p{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-family: a-otf-ryumin-pr6n, serif;
+    font-size: 25px;
+    line-height: 50px;
+    color: white;
+}
+
+main{
+    /* background-color: aqua; */
+    /* width: 93.75%; */
+    /* margin: 0 auto; */
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    margin-bottom: 150px;
+}
+.cont_reverse{
+    flex-flow: row-reverse;
+    padding-left: 0%;
+    padding-right: 10%;
+}
+
+
+/*コンセプト*/
+#concept{
+    margin-bottom: 65px;
+}
+#concept h2{
+    padding-left: 10%;
+}
+#concept p{
+    font-size: 16px;
+    line-height: 60px;
+    /*background-color: yellowgreen;*/
+}
+
+#concept h3{
+    font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+    font-size: 24px;
+    line-height: 50px;
+    margin-bottom: 40px;
+}
+#concept_img{
+    width: 60%;
+}
+#concept .container img{
+    /* position: absolute; */
+    width: 100%;
+}
+
+/*サービス*/
+#survice{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#survice h3{
+    margin-left: 40px;
+}
+
+#survice p{
+    line-height: 60px;
+    margin-bottom: 90px;
+    margin-top: 40px;
+}
+.survice_img{
+    width: 65%;
+}
+.survice_img img{
+    width: 100%;
+}
+.survie_cont{
+    font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+    writing-mode:vertical-rl;
+    text-orientation: upright;
+    text-align: left;
+    letter-spacing: 4px;
+}
+
+/*メニュー*/
+#menu{
+    margin-bottom: 100px;
+}
+#menu h2{
+    text-align: center;
+    margin: 100px 0;
+}
+
+#menu_cont{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+}
+
+#menu_cont div{
+    width: 33.33%;
+    margin-bottom: 80px;
+}
+#menu_cont div img{
+    max-width: 100%;
+}
+#menu_cont div p{
+    font-family: a-otf-ryumin-pr6n, serif;
+    padding: 30px;
+}
+
+/*アクセス*/
+#access {
+    padding: 0 10%;
+}
+#access h2{
+    text-align: center;
+    margin: 100px 0;
+}
+
+#access h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+#access address{
+    font-style: normal;
+}
+
+#access_cont{
+    display: flex;
+    justify-content: space-between;
+}
+
+.access_address{
+    width: 45%;
+    background-color: #fff;
+    padding: 40px;
+    line-height: 4em;
+}
+.access_map{
+    width: 55%;
+}
+
+.access_map iframe{
+    width: 100%;
+    height: 500px;
+}
+
+footer{
+    text-align: center;
+    margin: 100px 0;
+}
